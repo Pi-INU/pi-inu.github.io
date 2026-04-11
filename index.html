@@ -16,6 +16,16 @@ header {
     padding:80px 20px;
 }
 header h1 { font-size:3rem; margin:0; }
+header .tagline {
+    margin-top:10px;
+    font-size:1.2rem;
+    opacity:0.9;
+}
+.badges {
+    margin-top:15px;
+    font-size:0.9rem;
+    opacity:0.9;
+}
 
 .cta-btn {
     display:inline-block;
@@ -50,6 +60,12 @@ section {
     border-radius:12px;
 }
 
+/* INTRO BOX */
+.highlight-box p {
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
 /* TOKEN */
 .token-box {
     background:#ede7f6;
@@ -58,7 +74,7 @@ section {
     margin-bottom:20px;
 }
 
-/* HISTORY GRID  */
+/* HISTORY */
 .history-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -72,7 +88,6 @@ section {
     font-size:0.95rem;
 }
 
-/* color */
 .y2021 { background:#6a1b9a; }
 .y2022 { background:#3949ab; }
 .y2023 { background:#00897b; }
@@ -80,7 +95,6 @@ section {
 .y2025 { background:#c62828; }
 .y2026 { background:#546e7a; }
 
-/* position */
 .left { grid-column:1; }
 .right { grid-column:2; }
 
@@ -102,9 +116,12 @@ section {
     transform:scale(1.1);
 }
 
+/* FOOTER */
 footer {
     text-align:center;
     padding:40px;
+    font-size:0.9rem;
+    color:#555;
 }
 
 </style>
@@ -114,44 +131,67 @@ footer {
 
 <!-- AUDIT -->
 <div class="audit-bar">
-
 <a href="PINU_AuditReport_InterFi.pdf" target="_blank">PINU Audit</a> |
 <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
-<a href="cross-chain-swap.html">PINU-PINU100X Swap</a>
+<a href="cross-chain-swap.html">Swap</a>
 </div>
 
 <header>
     <h1>Pi INU Ecosystem</h1>
-    <p>PINU & PINU100X</p>
+
+    <div class="tagline">
+        Building a Sustainable Meme Ecosystem Since 2021
+    </div>
+
+    <div class="badges">
+        Audited | CMC Listed | Multi-Exchange Listed | Since 2021
+    </div>
+
     <a class="cta-btn" href="#partners">View Exchanges</a>
 </header>
+
 <section>
-  <div class="highlight-box">
-    Pi INU is a meme-inspired crypto project launched in November 2021, rooted in the global Pi Network community and driven by strong and sustained interest from users worldwide.
+<div class="highlight-box">
 
-While Pi INU and the Pi Core Team follow different operational paths, both share the broader Pioneer ecosystem. As independent entities, they continue to evolve separately—yet remain connected through a shared vision and community foundation. Moving forward, Pi INU positions itself as both a constructive competitor and a potential collaborator within this expanding landscape.
+<p>
+Pi INU is a meme-inspired crypto project launched in November 2021, rooted in the global Pi Network community and driven by strong and sustained interest from users worldwide.
+</p>
 
+<p>
+While Pi INU and the Pi Core Team follow different operational paths, both share the broader Pioneer ecosystem. As independent entities, they continue to evolve separately—yet remain connected through a shared vision and community foundation.
+</p>
+
+<p>
+Moving forward, Pi INU positions itself as both a constructive competitor and a potential collaborator within this expanding landscape.
+</p>
+
+<p>
 Since its inception, Pi INU has continuously explored diverse approaches to ecosystem development. Through real-world experience and iteration, the project has built its own operational expertise and achieved meaningful technical progress.
+</p>
 
+<p>
 Unlike short-term pump-and-dump meme tokens, Pi INU represents a long-term brand with independent value, sustainability, and a clear direction.
+</p>
 
-Over the years, Pi INU has developed and expanded its ecosystem through:
-• DEX & CEX Listings
-• Mining Application (Pi INU Mining)
-• Blockchain Games (CryptoCube, CryptoWheel)
-• Cross-chain Swap System
-• NFT & Staking Services
+<p>
+Over the years, Pi INU has developed and expanded its ecosystem through DEX & CEX listings, a mining application, blockchain games, a cross-chain swap system, NFTs, and staking services.
+</p>
 
-The project has also gained recognition through global media coverage including Benzinga, Coinreaders, Coinpost, BSCN, and Newsway, and has collaborated with organizations such as IoTeX Korea, Pi Store Korea, and TELTLK.
+<p>
+The project has gained recognition through global media coverage including Benzinga, Coinpost, and BSCN, and has collaborated with IoTeX Korea, Pi Store Korea, and TELTLK.
+</p>
 
-Pi INU has completed smart contract audits for both PINU and PINU100X, and is listed on CoinMarketCap (both tokens) and Trust Wallet (PINU). The team operates under a registered LLC in New Mexico, USA.
+<p>
+Pi INU has completed smart contract audits for both PINU and PINU100X, is listed on CoinMarketCap, and operates under a registered LLC in New Mexico, USA.
+</p>
 
-The community continues to grow across multiple platforms including X, Instagram, Telegram, YouTube, TikTok, Kakao, Discord, and Facebook.
+<p>
+The community continues to grow across platforms including X, Telegram, YouTube, TikTok, Kakao, Discord, and Facebook.
+</p>
 
-Previously listed exchanges include: Decoin, Dsdaq, Vindax, Azbit, Coinsbit, P2B, Bifinance, PointPay, and Topone.
-
-  </div>
+</div>
 </section>
+
 <section>
 <h2>Tokens</h2>
 
@@ -171,6 +211,10 @@ Previously listed exchanges include: Decoin, Dsdaq, Vindax, Azbit, Coinsbit, P2B
 
 <section>
 <h2>History</h2>
+
+<p style="text-align:center; font-weight:bold;">
+A proven track record of continuous growth and development
+</p>
 
 <div class="history-grid">
 
@@ -220,23 +264,24 @@ TELTLK Collaboration
 
 <h3>PINU/USDT</h3>
 <div class="partner-grid">
-<img src="digifinex.png">
-<img src="dextrade.png">
-<img src="tapbit.png">
+<a href="#" target="_blank"><img src="digifinex.png"></a>
+<a href="#" target="_blank"><img src="dextrade.png"></a>
+<a href="#" target="_blank"><img src="tapbit.png"></a>
 </div>
 
 <br>
 
 <h3>PINU100X/USDT</h3>
 <div class="partner-grid">
-<img src="lbank.png">
-<img src="ascendex.png">
+<a href="#" target="_blank"><img src="lbank.png"></a>
+<a href="#" target="_blank"><img src="ascendex.png"></a>
 </div>
 
 </section>
 
 <footer>
 <p>© 2026 Pi INU Project</p>
+<p>Pi INU is an independent crypto project and is not affiliated with the Pi Core Team.</p>
 </footer>
 
 </body>
