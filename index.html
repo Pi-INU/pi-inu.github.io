@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pi INU (PINU) - Official Website</title>
+<title>Pi INU Ecosystem</title>
 
 <style>
-body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color:#333; }
+body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f4f7f6; }
 
 /* HERO */
 header {
     background: linear-gradient(135deg, #4a148c, #7b1fa2);
     color:#fff;
     text-align:center;
-    padding:100px 20px;
+    padding:80px 20px;
 }
-header h1 { font-size:3.2rem; margin:0; }
-header p { opacity:0.9; margin-top:10px; }
+header h1 { font-size:3rem; margin:0; }
 
 .cta-btn {
     display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
+    margin-top:15px;
+    padding:10px 20px;
     background:#ffca28;
     color:#000;
     border-radius:30px;
@@ -29,130 +28,116 @@ header p { opacity:0.9; margin-top:10px; }
     font-weight:bold;
 }
 
+/* AUDIT BAR */
+.audit-bar {
+    background:#212121;
+    color:#fff;
+    text-align:center;
+    padding:10px;
+    font-size:0.9rem;
+}
+.audit-bar a {
+    color:#ffca28;
+    margin:0 10px;
+}
+
 /* SECTION */
 section {
-    max-width:900px;
+    max-width:1000px;
     margin:30px auto;
-    padding:40px;
+    padding:30px;
     background:#fff;
     border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.05);
-}
-h2 {
-    border-left:5px solid #4a148c;
-    padding-left:15px;
-    color:#4a148c;
 }
 
-/* GRID */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-.card {
-    background:#f3e5f5;
-    padding:20px;
-    border-radius:8px;
-    text-align:center;
-    transition:0.3s;
-}
-.card:hover { transform: translateY(-5px); }
-
-/* TOKEN BOX */
+/* TOKEN */
 .token-box {
     background:#ede7f6;
-    padding:25px;
-    border-radius:12px;
+    padding:20px;
+    border-radius:10px;
     margin-bottom:20px;
 }
 
-/* CONTRACT */
-.contract {
-    background:#212121;
-    color:#fff;
-    padding:15px;
-    border-radius:8px;
-    font-size:0.9rem;
-    word-break:break-all;
+/* HISTORY GRID (지그재그) */
+.history-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-/* TIMELINE CENTER */
-.timeline {
+.history-box {
+    padding:20px;
+    border-radius:12px;
+    color:#fff;
+    font-size:0.95rem;
+}
+
+/* 색상 다양화 */
+.y2021 { background:#6a1b9a; }
+.y2022 { background:#3949ab; }
+.y2023 { background:#00897b; }
+.y2024 { background:#ef6c00; }
+.y2025 { background:#c62828; }
+.y2026 { background:#546e7a; }
+
+/* 위치 조정 (지그재그) */
+.left { grid-column:1; }
+.right { grid-column:2; }
+
+/* PARTNERS */
+.partner-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:20px;
+    align-items:center;
     text-align:center;
 }
 
-.timeline-box {
-    background:#4b5d73;
-    color:#fff;
-    padding:25px;
-    border-radius:15px;
-    margin:30px auto;
-    max-width:700px;
+.partner-grid img {
+    width:100%;
+    max-width:120px;
     transition:0.3s;
 }
-.timeline-box:hover {
-    transform: translateY(-5px);
+.partner-grid img:hover {
+    transform:scale(1.1);
 }
 
-.arrow {
-    text-align:center;
-    font-size:28px;
-    color:#bbb;
-}
-
-/* FOOTER */
 footer {
     text-align:center;
-    padding:50px;
+    padding:40px;
 }
-
-a { color:#4a148c; text-decoration:none; }
-a:hover { text-decoration:underline; }
 
 </style>
 </head>
 
 <body>
 
+<!-- AUDIT -->
+<div class="audit-bar">
+    Audit Reports:
+    <a href="PINU_AuditReport_InterFi.pdf" target="_blank">PINU Audit</a> |
+    <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a>
+</div>
+
 <header>
     <h1>Pi INU Ecosystem</h1>
-    <p>PINU & PINU100X - Multi Token Expansion</p>
-    <a class="cta-btn" href="#">Buy Tokens</a>
+    <p>PINU & PINU100X</p>
+    <a class="cta-btn" href="#partners">View Exchanges</a>
 </header>
-
-<section>
-<h2>About</h2>
-<p>
-Pi INU is a meme-based ecosystem built on Binance Smart Chain,
-expanding into multi-token utilities including PINU and PINU100X.
-</p>
-</section>
 
 <section>
 <h2>Tokens</h2>
 
 <div class="token-box">
 <h3>PINU</h3>
-<p><b>Exchanges:</b><br>
-<a href="#">Digifinex</a> |
-<a href="#">Dextrade</a> |
-<a href="#">Tapbit</a>
-</p>
-<p>
-<a href="#">CoinMarketCap</a>
-</p>
+<p>Listed on Digifinex / Dextrade / Tapbit</p>
+<p><a href="#">CoinMarketCap</a></p>
 </div>
 
 <div class="token-box">
 <h3>PINU100X</h3>
-<p><b>Exchanges:</b><br>
-<a href="#">LBank</a> |
-<a href="#">AscendEX</a>
-</p>
-<p>
-<a href="#">CoinMarketCap</a>
-</p>
+<p>Listed on LBank / AscendEX</p>
+<p><a href="#">CoinMarketCap</a></p>
 </div>
 
 </section>
@@ -160,65 +145,42 @@ expanding into multi-token utilities including PINU and PINU100X.
 <section>
 <h2>History</h2>
 
-<div class="timeline">
+<div class="history-grid">
 
-<div class="timeline-box">
-<h3>2021</h3>
-Pi INU Launch<br>
-PancakeSwap Listing<br>
-Global Exchange Listings<br>
-CoinMarketCap Listing<br>
-LLC Registered (USA)
+<div class="history-box y2021 left">
+<b>2021</b><br>
+Launch / PancakeSwap<br>
+CMC Listing / LLC
 </div>
 
-<div class="arrow">⬇</div>
-
-<div class="timeline-box">
-<h3>2022</h3>
-NFT Launch<br>
-Mining App<br>
-Game Launch<br>
-Digifinex Listing<br>
-Audit Completed<br>
-Staking Launch
+<div class="history-box y2022 right">
+<b>2022</b><br>
+NFT / Mining App<br>
+Digifinex / Audit
 </div>
 
-<div class="arrow">⬇</div>
-
-<div class="timeline-box">
-<h3>2023</h3>
-MDEX / Biswap Listing<br>
-P2B Listing<br>
-Market Maker System<br>
-AMA Events<br>
-17.4K Users
+<div class="history-box y2023 left">
+<b>2023</b><br>
+MDEX / Biswap<br>
+Market Maker / AMA
 </div>
 
-<div class="arrow">⬇</div>
-
-<div class="timeline-box">
-<h3>2024</h3>
-Mining Service End<br>
-DEX-TRADE Listing<br>
+<div class="history-box y2024 right">
+<b>2024</b><br>
+DEXTRADE Listing<br>
 PINU100X Launch<br>
-QuickSwap Listing<br>
 LBank Listing
 </div>
 
-<div class="arrow">⬇</div>
-
-<div class="timeline-box">
-<h3>2025</h3>
-Tapbit Listing<br>
-PointPay Listing<br>
-AscendEX Listing<br>
-Cross-chain Swap
+<div class="history-box y2025 left">
+<b>2025</b><br>
+Tapbit / PointPay<br>
+AscendEX<br>
+Cross-chain
 </div>
 
-<div class="arrow">⬇</div>
-
-<div class="timeline-box">
-<h3>2026</h3>
+<div class="history-box y2026 right">
+<b>2026</b><br>
 TELTLK Collaboration
 </div>
 
@@ -227,27 +189,23 @@ TELTLK Collaboration
 </section>
 
 <section id="partners">
-<h2>Partners</h2>
+<h2>Partners / Exchanges</h2>
 
-<div class="grid">
-<div class="card">Digifinex</div>
-<div class="card">Dextrade</div>
-<div class="card">Tapbit</div>
-<div class="card">LBank</div>
-<div class="card">AscendEX</div>
+<h3>PINU</h3>
+<div class="partner-grid">
+<img src="digifinex.png">
+<img src="dextrade.png">
+<img src="tapbit.png">
 </div>
 
-</section>
+<br>
 
-<section>
-<h2>Community</h2>
-<p>
-<a href="#">Twitter</a> |
-<a href="#">Telegram</a> |
-<a href="#">BscScan</a> |
-<a href="#">Whitepaper</a> |
-<a href="#partners">Partners</a>
-</p>
+<h3>PINU100X</h3>
+<div class="partner-grid">
+<img src="lbank.png">
+<img src="ascendex.png">
+</div>
+
 </section>
 
 <footer>
