@@ -47,7 +47,7 @@ h2 {
 /* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
 }
 .card {
@@ -55,10 +55,13 @@ h2 {
     padding:20px;
     border-radius:8px;
     text-align:center;
+    transition:0.3s;
 }
-.card b { color:#4a148c; display:block; margin-bottom:5px; }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-/* CONTRACT BOX */
+/* CONTRACT */
 .contract {
     background:#212121;
     color:#fff;
@@ -68,9 +71,23 @@ h2 {
     word-break:break-all;
 }
 
-/* ROADMAP */
-.roadmap li {
-    margin-bottom:10px;
+/* TIMELINE */
+.timeline-box {
+    background:#4b5d73;
+    color:#fff;
+    padding:25px;
+    border-radius:15px;
+    margin:30px 0;
+    transition:0.3s;
+}
+.timeline-box:hover {
+    transform: translateY(-5px);
+}
+
+.arrow {
+    text-align:center;
+    font-size:28px;
+    color:#bbb;
 }
 
 /* FOOTER */
@@ -78,7 +95,10 @@ footer {
     text-align:center;
     padding:50px;
 }
-a { color:#4a148c; }
+
+a { color:#4a148c; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
 </style>
 </head>
 
@@ -98,8 +118,7 @@ built on Binance Smart Chain (BSC).
 It aims to provide fast transactions, liquidity, and accessibility
 for millions of Pi pioneers entering the DeFi ecosystem.
 </p>
-
-<p><b>Early Growth:</b> Strong support from Japanese investors during early exchange listings helped establish the project's foundation.</p>
+<p><b>Early Growth:</b> Strong support from Japanese investors established a strong early foundation.</p>
 </section>
 
 <section>
@@ -108,16 +127,15 @@ for millions of Pi pioneers entering the DeFi ecosystem.
 <div class="grid">
 <div class="card"><b>Network</b>BSC (BEP-20)</div>
 <div class="card"><b>Symbol</b>PINU</div>
-<div class="card"><b>Type</b>Meme / Community Token</div>
-<div class="card"><b>Focus</b>Global + Japan</div>
+<div class="card"><b>Type</b>Meme Token</div>
+<div class="card"><b>Focus</b>Global / Japan</div>
 </div>
 
 <br>
 
 <div class="contract">
-Contract Address: 0xXXXXXXXXXXXXXXX (replace)
+Contract Address: 0xXXXXXXXXXXXXXXX (replace with real)
 </div>
-
 </section>
 
 <section>
@@ -132,25 +150,101 @@ Contract Address: 0xXXXXXXXXXXXXXXX (replace)
 </section>
 
 <section>
-<h2>Roadmap</h2>
-<ul class="roadmap">
-<li>Phase 1 — Launch & Community</li>
-<li>Phase 2 — Exchange Listings</li>
-<li>Phase 3 — Utility Expansion</li>
-<li>Phase 4 — Pi Network Bridge</li>
-</ul>
+<h2>History</h2>
+
+<div class="timeline-box">
+<h3>2021</h3>
+Pi INU Launch (Nov)<br>
+PancakeSwap Listing<br>
+Decoin / Vindax / Azbit Listings<br>
+CoinMarketCap Listing<br>
+LLC Registered (USA)
+</div>
+
+<div class="arrow">⬇</div>
+
+<div class="timeline-box">
+<h3>2022</h3>
+Coinsbit Listing<br>
+NFT Launch<br>
+CryptoWheel Game<br>
+Mining App Launch<br>
+Digifinex Listing<br>
+Smart Contract Audit<br>
+CryptoCube Game<br>
+Staking Launch<br>
+Trust Wallet Listing
+</div>
+
+<div class="arrow">⬇</div>
+
+<div class="timeline-box">
+<h3>2023</h3>
+MDEX / Biswap Listing<br>
+P2B Listing<br>
+CryptoCube Competition<br>
+Market Maker System<br>
+AMA with IoTeX Korea<br>
+17.4K Users
+</div>
+
+<div class="arrow">⬇</div>
+
+<div class="timeline-box">
+<h3>2024</h3>
+Mining Service End<br>
+DEX-TRADE Listing<br>
+Bifinance Listing<br><br>
+
+Pi INU 100x Launch<br>
+QuickSwap Listing<br>
+CoinMarketCap Listing<br>
+Audit Completed<br>
+LBank Listing
+</div>
+
+<div class="arrow">⬇</div>
+
+<div class="timeline-box">
+<h3>2025</h3>
+Tapbit Listing<br>
+PointPay Listing<br>
+Top.one Futures<br>
+AscendEX Listing<br>
+Cross-chain Swap
+</div>
+
+<div class="arrow">⬇</div>
+
+<div class="timeline-box">
+<h3>2026</h3>
+TELTLK Collaboration
+</div>
+
+</section>
+
+<section id="partners">
+<h2>Partners</h2>
+
+<div class="grid">
+<div class="card">Decoin</div>
+<div class="card">Digifinex</div>
+<div class="card">P2B</div>
+<div class="card">LBank</div>
+<div class="card">AscendEX</div>
+<div class="card">TELTLK</div>
+</div>
+
 </section>
 
 <section>
 <h2>Community</h2>
 <p>
-Join our global community and stay updated:
-</p>
-<p>
 <a href="#">Twitter (X)</a> |
 <a href="#">Telegram</a> |
 <a href="#">BscScan</a> |
-<a href="#">Whitepaper</a>
+<a href="#">Whitepaper</a> |
+<a href="#partners">Partners</a>
 </p>
 </section>
 
