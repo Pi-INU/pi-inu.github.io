@@ -47,7 +47,7 @@ h2 {
 /* GRID */
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 .card {
@@ -57,8 +57,14 @@ h2 {
     text-align:center;
     transition:0.3s;
 }
-.card:hover {
-    transform: translateY(-5px);
+.card:hover { transform: translateY(-5px); }
+
+/* TOKEN BOX */
+.token-box {
+    background:#ede7f6;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
 }
 
 /* CONTRACT */
@@ -71,13 +77,18 @@ h2 {
     word-break:break-all;
 }
 
-/* TIMELINE */
+/* TIMELINE CENTER */
+.timeline {
+    text-align:center;
+}
+
 .timeline-box {
     background:#4b5d73;
     color:#fff;
     padding:25px;
     border-radius:15px;
-    margin:30px 0;
+    margin:30px auto;
+    max-width:700px;
     transition:0.3s;
 }
 .timeline-box:hover {
@@ -105,58 +116,57 @@ a:hover { text-decoration:underline; }
 <body>
 
 <header>
-    <h1>Pi INU (PINU)</h1>
-    <p>Bridging Pi Network to the BSC Ecosystem</p>
-    <a class="cta-btn" href="#">Buy on PancakeSwap</a>
+    <h1>Pi INU Ecosystem</h1>
+    <p>PINU & PINU100X - Multi Token Expansion</p>
+    <a class="cta-btn" href="#">Buy Tokens</a>
 </header>
 
 <section>
 <h2>About</h2>
 <p>
-Pi INU is a meme token inspired by the global Pi Network community,
-built on Binance Smart Chain (BSC).
-It aims to provide fast transactions, liquidity, and accessibility
-for millions of Pi pioneers entering the DeFi ecosystem.
+Pi INU is a meme-based ecosystem built on Binance Smart Chain,
+expanding into multi-token utilities including PINU and PINU100X.
 </p>
-<p><b>Early Growth:</b> Strong support from Japanese investors established a strong early foundation.</p>
 </section>
 
 <section>
-<h2>Tokenomics</h2>
+<h2>Tokens</h2>
 
-<div class="grid">
-<div class="card"><b>Network</b>BSC (BEP-20)</div>
-<div class="card"><b>Symbol</b>PINU</div>
-<div class="card"><b>Type</b>Meme Token</div>
-<div class="card"><b>Focus</b>Global / Japan</div>
+<div class="token-box">
+<h3>PINU</h3>
+<p><b>Exchanges:</b><br>
+<a href="#">Digifinex</a> |
+<a href="#">Dextrade</a> |
+<a href="#">Tapbit</a>
+</p>
+<p>
+<a href="#">CoinMarketCap</a>
+</p>
 </div>
 
-<br>
-
-<div class="contract">
-Contract Address: 0xXXXXXXXXXXXXXXX (replace with real)
+<div class="token-box">
+<h3>PINU100X</h3>
+<p><b>Exchanges:</b><br>
+<a href="#">LBank</a> |
+<a href="#">AscendEX</a>
+</p>
+<p>
+<a href="#">CoinMarketCap</a>
+</p>
 </div>
-</section>
 
-<section>
-<h2>How to Buy</h2>
-<ol>
-<li>Install MetaMask</li>
-<li>Switch to BNB Smart Chain</li>
-<li>Buy BNB</li>
-<li>Go to PancakeSwap</li>
-<li>Swap BNB → PINU</li>
-</ol>
 </section>
 
 <section>
 <h2>History</h2>
 
+<div class="timeline">
+
 <div class="timeline-box">
 <h3>2021</h3>
-Pi INU Launch (Nov)<br>
+Pi INU Launch<br>
 PancakeSwap Listing<br>
-Decoin / Vindax / Azbit Listings<br>
+Global Exchange Listings<br>
 CoinMarketCap Listing<br>
 LLC Registered (USA)
 </div>
@@ -165,15 +175,12 @@ LLC Registered (USA)
 
 <div class="timeline-box">
 <h3>2022</h3>
-Coinsbit Listing<br>
 NFT Launch<br>
-CryptoWheel Game<br>
-Mining App Launch<br>
+Mining App<br>
+Game Launch<br>
 Digifinex Listing<br>
-Smart Contract Audit<br>
-CryptoCube Game<br>
-Staking Launch<br>
-Trust Wallet Listing
+Audit Completed<br>
+Staking Launch
 </div>
 
 <div class="arrow">⬇</div>
@@ -182,9 +189,8 @@ Trust Wallet Listing
 <h3>2023</h3>
 MDEX / Biswap Listing<br>
 P2B Listing<br>
-CryptoCube Competition<br>
 Market Maker System<br>
-AMA with IoTeX Korea<br>
+AMA Events<br>
 17.4K Users
 </div>
 
@@ -194,12 +200,8 @@ AMA with IoTeX Korea<br>
 <h3>2024</h3>
 Mining Service End<br>
 DEX-TRADE Listing<br>
-Bifinance Listing<br><br>
-
-Pi INU 100x Launch<br>
+PINU100X Launch<br>
 QuickSwap Listing<br>
-CoinMarketCap Listing<br>
-Audit Completed<br>
 LBank Listing
 </div>
 
@@ -209,7 +211,6 @@ LBank Listing
 <h3>2025</h3>
 Tapbit Listing<br>
 PointPay Listing<br>
-Top.one Futures<br>
 AscendEX Listing<br>
 Cross-chain Swap
 </div>
@@ -221,18 +222,19 @@ Cross-chain Swap
 TELTLK Collaboration
 </div>
 
+</div>
+
 </section>
 
 <section id="partners">
 <h2>Partners</h2>
 
 <div class="grid">
-<div class="card">Decoin</div>
 <div class="card">Digifinex</div>
-<div class="card">P2B</div>
+<div class="card">Dextrade</div>
+<div class="card">Tapbit</div>
 <div class="card">LBank</div>
 <div class="card">AscendEX</div>
-<div class="card">TELTLK</div>
 </div>
 
 </section>
@@ -240,7 +242,7 @@ TELTLK Collaboration
 <section>
 <h2>Community</h2>
 <p>
-<a href="#">Twitter (X)</a> |
+<a href="#">Twitter</a> |
 <a href="#">Telegram</a> |
 <a href="#">BscScan</a> |
 <a href="#">Whitepaper</a> |
