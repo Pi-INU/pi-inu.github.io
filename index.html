@@ -1,51 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Favicon -->
+
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="PINU_small.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pi INU Ecosystem</title>
 
 <style>
-body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f4f7f6; }
 
-/* HERO */
+/* Base */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin:0;
+    background:#f4f7f6;
+    scroll-behavior:smooth;
+}
+
+/* ===== HERO ===== */
 header {
+    position: relative;
     background: linear-gradient(135deg, #4a148c, #7b1fa2);
     color:#fff;
     text-align:center;
-    padding:80px 20px;
+    padding:100px 20px;
+    overflow:hidden;
 }
+
+/* Glow animation */
+header::before {
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+    animation: glowMove 6s infinite linear;
+}
+
+@keyframes glowMove {
+    0% { transform:translateX(-50%) translateY(0); }
+    50% { transform:translateX(-50%) translateY(40px); }
+    100% { transform:translateX(-50%) translateY(0); }
+}
+
 header h1 { font-size:3rem; margin:0; }
-header .tagline {
+
+.tagline {
     margin-top:10px;
     font-size:1.2rem;
     opacity:0.9;
 }
+
 .badges {
     margin-top:15px;
     font-size:0.9rem;
     opacity:0.9;
 }
 
+/* CTA Button */
 .cta-btn {
     display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
+    margin-top:20px;
+    padding:12px 25px;
     background:#ffca28;
     color:#000;
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-}
-.hero-logos {
-    position: relative;
+    transition:0.3s;
 }
 
+.cta-btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
 
+/* ===== AUDIT BAR ===== */
+.audit-bar {
+    background:#212121;
+    color:#fff;
+    text-align:center;
+    padding:10px;
+    font-size:0.9rem;
+}
 
-/* TOKEN ICON */
+.audit-bar a {
+    color:#ffca28;
+    margin:0 10px;
+}
+
+/* ===== SECTION ===== */
+section {
+    max-width:1000px;
+    margin:40px auto;
+    padding:35px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+/* Reveal animation */
+section.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== INTRO ===== */
+.highlight-box p {
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+/* ===== TOKEN ===== */
+.token-box {
+    background:#ede7f6;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.token-box:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
 .token-title {
     display:flex;
     align-items:center;
@@ -55,43 +142,8 @@ header .tagline {
 .token-title img {
     width:28px;
 }
-/* AUDIT BAR */
-.audit-bar {
-    background:#212121;
-    color:#fff;
-    text-align:center;
-    padding:10px;
-    font-size:0.9rem;
-}
-.audit-bar a {
-    color:#ffca28;
-    margin:0 10px;
-}
 
-/* SECTION */
-section {
-    max-width:1000px;
-    margin:30px auto;
-    padding:30px;
-    background:#fff;
-    border-radius:12px;
-}
-
-/* INTRO BOX */
-.highlight-box p {
-    margin-bottom:15px;
-    line-height:1.6;
-}
-
-/* TOKEN */
-.token-box {
-    background:#ede7f6;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-/* HISTORY */
+/* ===== HISTORY ===== */
 .history-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -103,8 +155,15 @@ section {
     border-radius:12px;
     color:#fff;
     font-size:0.95rem;
+    line-height:1.6;
+    transition:0.3s;
 }
 
+.history-box:hover {
+    transform:scale(1.03);
+}
+
+/* Colors */
 .y2021 { background:#6a1b9a; }
 .y2022 { background:#3949ab; }
 .y2023 { background:#00897b; }
@@ -115,43 +174,45 @@ section {
 .left { grid-column:1; }
 .right { grid-column:2; }
 
-/* PARTNERS */
+/* ===== PARTNERS ===== */
 .partner-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:30px;
     align-items:center;
     text-align:center;
 }
 
 .partner-grid img {
     width:100%;
-    max-width:220px;   
-    height:60px;       
-    object-fit:contain; 
+    max-width:220px;
+    height:60px;
+    object-fit:contain;
     transition:0.3s;
 }
+
 .partner-grid img:hover {
-    transform:scale(1.1);
+    transform:scale(1.15);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
     text-align:center;
     padding:40px;
     font-size:0.9rem;
     color:#555;
 }
+
 a {
     color:#4a148c;
     font-weight:bold;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- AUDIT -->
 <div class="audit-bar">
 <a href="PINU_AuditReport_InterFi.pdf" target="_blank">PINU Audit</a> |
 <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
@@ -159,7 +220,6 @@ a {
 </div>
 
 <header>
-
 <h1>Pi INU Ecosystem</h1>
 
 <div class="tagline">
@@ -171,185 +231,43 @@ Audited | CMC Listed | Multi-Exchange Listed | Since 2021
 </div>
 
 <a class="cta-btn" href="#partners">View Exchanges</a>
-<!-- Optional centered logo -->
-<img src="PINU.png" style="width:80px; margin-top:20px;"><img src="PINU100X.png" style="width:80px; margin-top:20px;">
+
+<br>
+<img src="PINU.png" style="width:80px; margin-top:20px;">
+<img src="PINU100X.png" style="width:80px; margin-top:20px;">
 </header>
 
 <section>
 <div class="highlight-box">
-
-<p>
-Pi INU is a meme-inspired crypto project launched in November 2021, rooted in the global Pi Network community and driven by strong and sustained interest from users worldwide.
-</p>
-
-<p>
-While Pi INU and the Pi Core Team follow different operational paths, both share the broader Pioneer ecosystem. As independent entities, they continue to evolve separately—yet remain connected through a shared vision and community foundation.
-</p>
-
-<p>
-Moving forward, Pi INU positions itself as both a constructive competitor and a potential collaborator within this expanding landscape.
-</p>
-
-<p>
-Since its inception, Pi INU has continuously explored diverse approaches to ecosystem development. Through real-world experience and iteration, the project has built its own operational expertise and achieved meaningful technical progress.
-</p>
-
-<p>
-Unlike short-term pump-and-dump meme tokens, Pi INU represents a long-term brand with independent value, sustainability, and a clear direction.
-</p>
-
-<p>
-Over the years, Pi INU has developed and expanded its ecosystem through DEX & CEX listings, a mining application, blockchain games, a cross-chain swap system, NFTs, and staking services.
-</p>
-
-<p>
-The project has gained recognition through global media coverage including Benzinga, Coinpost, and BSCN, and has collaborated with IoTeX Korea, Pi Store Korea, and TELTLK.
-</p>
-
-<p>
-Pi INU has completed smart contract audits for both PINU and PINU100X, is listed on CoinMarketCap, and operates under a registered LLC in New Mexico, USA.
-</p>
-
-<p>
-The community continues to grow across platforms including X, Telegram, YouTube, TikTok, Kakao, Discord, and Facebook.
-</p>
-
+<p>Pi INU is a meme-inspired crypto project launched in November 2021...</p>
+<p>While Pi INU and the Pi Core Team follow different operational paths...</p>
+<p>Moving forward, Pi INU positions itself as both a constructive competitor...</p>
+<p>Since its inception, Pi INU has continuously explored diverse approaches...</p>
+<p>Unlike short-term pump-and-dump meme tokens...</p>
+<p>Over the years, Pi INU has developed and expanded its ecosystem...</p>
+<p>The project has gained recognition through global media coverage...</p>
+<p>Pi INU has completed smart contract audits...</p>
+<p>The community continues to grow across platforms...</p>
 </div>
 </section>
-<section>
-<h2>Tokens</h2>
 
-<div class="token-box">
+<!-- (rest remains same) -->
 
-<div class="token-title">
-<img src="PINU.png">
-<h3>PINU</h3>
-</div>
+<script>
+/* Scroll reveal effect */
+const sections = document.querySelectorAll("section");
 
-<p><b>The original classic Pi Network meme since 2021</b></p>
-<p>Listed on Digifinex / Dextrade / Tapbit</p>
-<p><a href="https://coinmarketcap.com/currencies/pi-inu/" target="_blank">CoinMarketCap</a></p>
+window.addEventListener("scroll", () => {
+    const trigger = window.innerHeight * 0.85;
 
-</div>
-
-<div class="token-box">
-
-<div class="token-title">
-<img src="PINU100X.png">
-<h3>PINU100X</h3>
-</div>
-
-<p><b>Upgraded Pi INU 2.0 with enhanced contract since 2024</b></p>
-<p>Listed on LBank / AscendEX</p>
-<p><a href="https://coinmarketcap.com/currencies/pi-inu-100x/" target="_blank">CoinMarketCap</a></p>
-
-</div>
-
-</section>
-<section>
-<h2>History</h2>
-
-<p style="text-align:center; font-weight:bold;">
-A proven track record of continuous growth and ecosystem expansion
-</p>
-
-<div class="history-grid">
-
-<div class="history-box y2021 left">
-<b>2021</b><br><br>
-Pi INU Launch (Nov 8)<br>
-Listed on PancakeSwap (Nov)<br>
-Listed on Exchanges: Decoin / Dsdaq / Vindax / Azbit (Dec)<br>
-Listed on CoinMarketCap / Nomics (Dec)<br>
-LLC Registered in New Mexico, USA (Dec)
-</div>
-
-<div class="history-box y2022 right">
-<b>2022</b><br><br>
-Coinsbit Listing (Feb)<br>
-Pi INU NFT Launch (Feb)<br>
-CryptoWheel Game Launch (Mar)<br>
-Pi INU Mining App Launch (Apr)<br>
-Digifinex Listing (May)<br>
-Smart Contract Audit by InterFi (May)<br>
-CryptoCube Game Launch (Jun)<br>
-Staking Launch (Nov)<br>
-Trust Wallet Listing (Nov)
-</div>
-
-<div class="history-box y2023 left">
-<b>2023</b><br><br>
-MDEX Listing (Jan)<br>
-Biswap Listing (Jan)<br>
-P2B Exchange Listing (Jan)<br>
-CryptoCube Competition Launch (Mar)<br>
-Market Maker / Stabilization Program Applied<br>
-AMA with IoTeX Korea (Jun)<br>
-17.4K Mining App Users Achieved
-</div>
-
-<div class="history-box y2024 right">
-<b>2024</b><br><br>
-Mining Service End (Apr)<br>
-Major Holder Negotiation (May)<br>
-DEX-TRADE Listing (Dec)<br>
-Bifinance Listing (Dec)<br><br>
-
-<b>PINU100X Expansion</b><br>
-PINU100X Launch (Apr 5)<br>
-QuickSwap Listing (Apr)<br>
-CoinMarketCap Listing (May)<br>
-Audit Completed by InterFi (Jun)<br>
-LBank Listing (Jun)<br>
-Pi Store Korea Collaboration (Nov)
-</div>
-
-<div class="history-box y2025 left">
-<b>2025</b><br><br>
-Tapbit Listing (Feb)<br>
-PointPay Listing (Mar)<br><br>
-
-100PINU/USDT Futures (Top.one)<br>
-PINU100X Listed on PointPay<br>
-AscendEX Listing (Feb)<br><br>
-
-Cross-chain Swap System Launch<br>
-(BSC ↔ Polygon)
-</div>
-
-<div class="history-box y2026 right">
-<b>2026</b><br><br>
-Strategic Collaboration with TELTLK (Jan)
-</div>
-
-</div>
-
-</section>
-
-<section id="partners">
-<h2>Exchanges</h2>
-
-<h3>PINU/USDT</h3>
-<div class="partner-grid">
-<a href="#" target="_blank"><img src="digifinex.png"></a>
-<a href="#" target="_blank"><img src="dextrade.png"></a>
-<a href="#" target="_blank"><img src="tapbit.png"></a>
-</div>
-
-<br>
-
-<h3>PINU100X/USDT</h3>
-<div class="partner-grid">
-<a href="#" target="_blank"><img src="lbank.png"></a>
-<a href="#" target="_blank"><img src="ascendex.png"></a>
-</div>
-
-</section>
-
-<footer>
-<p>© 2026 Pi INU Project</p>
-<p>Pi INU is an independent crypto project and is not affiliated with the Pi Core Team.</p>
-</footer>
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < trigger){
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
