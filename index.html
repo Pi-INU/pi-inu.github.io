@@ -271,17 +271,13 @@ window.addEventListener("scroll", () => {
     });
 });
 
-/* Translate in same tab */
+/* Translate (fixed version) */
 function goTranslate(lang){
-    function goTranslate(lang){
-    const originalUrl = "https://pi-inu.github.io/"; 
+    const originalUrl = "https://pi-inu.github.io/";
     const url = encodeURIComponent(originalUrl);
 
     window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl="+lang+"&u="+url;
-}
-    window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl="+lang+"&u="+url;
+    "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
 }
 </script>
 
