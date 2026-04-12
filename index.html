@@ -218,8 +218,19 @@ footer {
     filter:invert(1); 
     opacity:0.85;
     transition:0.3s;
+        animation: float 3s ease-in-out infinite;
 }
-
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+    .sns-bar img:nth-child(1) { animation-delay: 0s; }
+.sns-bar img:nth-child(2) { animation-delay: 0.2s; }
+.sns-bar img:nth-child(3) { animation-delay: 0.4s; }
+.sns-bar img:nth-child(4) { animation-delay: 0.6s; }
+.sns-bar img:nth-child(5) { animation-delay: 0.8s; }
+.sns-bar img:nth-child(6) { animation-delay: 1s; }
 .sns-bar img:hover {
     transform:translateY(-4px) scale(1.15);
     opacity:1;
