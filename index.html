@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="PINU_small.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pi INU Ecosystem</title>
@@ -41,43 +43,7 @@ header .tagline {
     position: relative;
 }
 
-.hero-logos img {
-    position: absolute;
-    width: 120px;
-    opacity: 0.9;
-}
 
-.logo-left {
-    left: 35%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    animation: float 4s ease-in-out infinite;
-}
-
-.logo-right {
-    right: 35%;
-    top: 55%;
-    transform: translate(50%, -50%);
-    animation: float 4s ease-in-out infinite;
-}
-
-/* 배경 로고 */
-.bg-logo {
-    position: absolute;
-    width: 400px;
-    opacity: 0.05;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.bg-left { left: 5%; }
-.bg-right { right: 5%; }
-
-@keyframes float {
-    0% { transform: translateY(-50%) translateY(0px); }
-    50% { transform: translateY(-50%) translateY(-10px); }
-    100% { transform: translateY(-50%) translateY(0px); }
-}
 
 /* TOKEN ICON */
 .token-title {
@@ -192,13 +158,7 @@ a {
 <a href="cross-chain-swap.html">Swap</a>
 </div>
 
-<header class="hero-logos">
-
-<img src="PINU.png" class="bg-logo bg-left">
-<img src="PINU100X.png" class="bg-logo bg-right">
-
-<img src="PINU.png" class="logo-left">
-<img src="PINU100X.png" class="logo-right">
+<header>
 
 <h1>Pi INU Ecosystem</h1>
 
@@ -211,7 +171,8 @@ Audited | CMC Listed | Multi-Exchange Listed | Since 2021
 </div>
 
 <a class="cta-btn" href="#partners">View Exchanges</a>
-
+<!-- Optional centered logo -->
+<img src="PINU.png" style="width:80px; margin-top:20px;"><img src="PINU100X.png" style="width:80px; margin-top:20px;">
 </header>
 
 <section>
