@@ -17,40 +17,33 @@ body {
     background:#f4f7f6;
 }
 
+/* ===== TOP BAR ===== */
+.audit-bar {
+    background:#212121;
+    color:#fff;
+    text-align:center;
+    padding:10px;
+}
+
+.audit-bar a {
+    color:#ffca28;
+    margin:0 10px;
+    text-decoration:none;
+}
+
 /* ===== HERO ===== */
 header {
     background: linear-gradient(135deg, #4a148c, #7b1fa2);
     color:#fff;
     text-align:center;
     padding:100px 20px;
-    position:relative;
-    overflow:hidden;
-}
-
-/* glow */
-header::before {
-    content:'';
-    position:absolute;
-    width:600px;
-    height:600px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
-    top:-200px;
-    left:50%;
-    transform:translateX(-50%);
-    animation: glow 6s infinite ease-in-out;
-}
-
-@keyframes glow {
-    0%,100% { transform:translateX(-50%) translateY(0); }
-    50% { transform:translateX(-50%) translateY(40px); }
 }
 
 header h1 { font-size:3rem; margin:0; }
 
-.tagline { margin-top:10px; opacity:0.9; }
+.tagline { margin-top:10px; }
 .badges { margin-top:10px; font-size:0.9rem; }
 
-/* CTA */
 .cta-btn {
     display:inline-block;
     margin-top:20px;
@@ -60,161 +53,88 @@ header h1 { font-size:3rem; margin:0; }
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
 }
 
-.cta-btn:hover {
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== TOP BARS ===== */
-.audit-bar {
-    background:#212121;
-    color:#fff;
-    text-align:center;
-    padding:10px;
-}
-
-.lang-bar {
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    padding:8px;
-    background:#111;
-}
-
-.lang-bar img {
-    width:28px;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.lang-bar img:hover {
-    transform:scale(1.2);
-}
-
-/* ===== SECTION (FIXED!!) ===== */
+/* ===== SECTION ===== */
 section {
-    max-width:1000px;
+    max-width:1100px;
     margin:40px auto;
     padding:35px;
     background:#fff;
     border-radius:12px;
     box-shadow:0 6px 20px rgba(0,0,0,0.05);
-
-    opacity:0;
-    transform:translateY(30px);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-/* sequential delay */
-section:nth-of-type(1){ animation-delay:0.2s; }
-section:nth-of-type(2){ animation-delay:0.4s; }
-section:nth-of-type(3){ animation-delay:0.6s; }
-section:nth-of-type(4){ animation-delay:0.8s; }
-
-@keyframes fadeUp {
-    to {
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 /* ===== TOKEN ===== */
 .token-box {
     background:#ede7f6;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    transition:0.3s;
-}
-
-.token-box:hover {
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:25px;
 }
 
 .token-title {
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 }
 
-.token-title img { width:28px; }
+.token-title img { width:32px; }
 
 /* ===== TIMELINE ===== */
 .timeline {
     position:relative;
-    margin-top:40px;
 }
 
-/* vertical line */
 .timeline::before {
     content:'';
     position:absolute;
     left:50%;
     width:4px;
     height:100%;
-    background:#ccc;
-    transform:translateX(-50%);
+    background:#ddd;
 }
 
 .timeline-item {
     width:50%;
     padding:20px;
-    position:relative;
 }
 
-.timeline-item.left { left:0; }
-.timeline-item.right { left:50%; }
+.timeline-item.left { float:left; }
+.timeline-item.right { float:right; }
 
 .timeline-box {
-    background:#4a148c;
-    color:#fff;
     padding:20px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    transition:0.3s;
+    border-radius:14px;
+    color:#fff;
+    line-height:1.6;
 }
 
-.timeline-box:hover {
-    transform:scale(1.05);
+/* Colorful boxes */
+.c1 { background:#6a1b9a; }
+.c2 { background:#3949ab; }
+.c3 { background:#00897b; }
+.c4 { background:#ef6c00; }
+.c5 { background:#c62828; }
+.c6 { background:#455a64; }
+
+/* ===== EXCHANGE ===== */
+.exchange-section h3 {
+    margin-top:20px;
 }
 
-/* dot */
-.timeline-item::before {
-    content:'';
-    position:absolute;
-    top:30px;
-    right:-10px;
-    width:20px;
-    height:20px;
-    background:#ffca28;
-    border-radius:50%;
-}
-
-.timeline-item.right::before {
-    left:-10px;
-}
-
-/* ===== PARTNERS ===== */
 .partner-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:30px;
-    text-align:center;
+    margin-top:15px;
 }
 
 .partner-grid img {
+    width:100%;
     max-width:220px;
-    height:60px;
+    height:70px;
     object-fit:contain;
-    transition:0.3s;
-}
-
-.partner-grid img:hover {
-    transform:scale(1.15);
 }
 
 /* ===== FOOTER ===== */
@@ -224,34 +144,46 @@ footer {
     color:#555;
 }
 
+.clearfix::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- ===== TOP BAR ===== -->
 <div class="audit-bar">
-PINU Audit | PINU100X Audit | Swap
+<a href="PINU_AuditReport_InterFi.pdf" target="_blank">PINU Audit</a> |
+<a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
+<a href="cross-chain-swap.html">Swap</a>
 </div>
 
-<div class="lang-bar">
-<a href="https://pi-inu.github.io"><img src="https://flagcdn.com/w40/us.png"></a>
-<a href="#" onclick="goTranslate('ko')"><img src="https://flagcdn.com/w40/kr.png"></a>
-<a href="#" onclick="goTranslate('ja')"><img src="https://flagcdn.com/w40/jp.png"></a>
-<a href="#" onclick="goTranslate('zh-CN')"><img src="https://flagcdn.com/w40/cn.png"></a>
-<a href="#" onclick="goTranslate('vi')"><img src="https://flagcdn.com/w40/vn.png"></a>
-<a href="#" onclick="goTranslate('id')"><img src="https://flagcdn.com/w40/id.png"></a>
-</div>
-
+<!-- ===== HERO ===== -->
 <header>
 <h1>Pi INU Ecosystem</h1>
-<div class="tagline">Building a Sustainable Meme Ecosystem Since 2021</div>
-<div class="badges">Audited | CMC Listed | Multi-Exchange Listed</div>
-<a class="cta-btn" href="#partners">View Exchanges</a>
-<br>
-<img src="PINU.png" width="80">
-<img src="PINU100X.png" width="80">
+
+<div class="tagline">
+Building a Sustainable Meme Ecosystem Since 2021
+</div>
+
+<div class="badges">
+Audited | CMC Listed | Multi-Exchange Listed
+</div>
+
+<a class="cta-btn" href="#exchanges">View Exchanges</a>
+
+<br><br>
+
+<img src="PINU.png" width="90">
+<img src="PINU100X.png" width="90">
+
 </header>
 
+<!-- ===== TOKENS ===== -->
 <section>
 <h2>Tokens</h2>
 
@@ -259,7 +191,11 @@ PINU Audit | PINU100X Audit | Swap
 <div class="token-title">
 <img src="PINU.png"><h3>PINU</h3>
 </div>
-<p>The original classic Pi Network meme since 2021</p>
+
+<p><b>The original Pi Network meme token since 2021</b></p>
+<p>Built on Binance Smart Chain (BSC), PINU focuses on accessibility, liquidity, and global community expansion.</p>
+<p>Multi-exchange listed with strong early traction in global markets.</p>
+
 <p><a href="https://coinmarketcap.com/currencies/pi-inu/" target="_blank">CoinMarketCap</a></p>
 </div>
 
@@ -267,50 +203,82 @@ PINU Audit | PINU100X Audit | Swap
 <div class="token-title">
 <img src="PINU100X.png"><h3>PINU100X</h3>
 </div>
-<p>Upgraded Pi INU 2.0 since 2024</p>
+
+<p><b>Next-generation Pi INU 2.0 launched in 2024</b></p>
+<p>Built on Polygon for scalability, speed, and low transaction costs.</p>
+<p>Designed for cross-chain expansion and advanced ecosystem integration.</p>
+
 <p><a href="https://coinmarketcap.com/currencies/pi-inu-100x/" target="_blank">CoinMarketCap</a></p>
 </div>
 
 </section>
 
+<!-- ===== HISTORY ===== -->
 <section>
 <h2>History</h2>
 
-<div class="timeline">
+<div class="timeline clearfix">
 
 <div class="timeline-item left">
-<div class="timeline-box">
-<b>2021</b><br>Launch / PancakeSwap / CMC / LLC
+<div class="timeline-box c1">
+<b>2021</b><br><br>
+Pi INU Launch (Nov 8)<br>
+PancakeSwap Listing<br>
+Decoin / Dsdaq / Vindax / Azbit<br>
+CMC & Nomics Listing<br>
+New Mexico LLC Registered
 </div>
 </div>
 
 <div class="timeline-item right">
-<div class="timeline-box">
-<b>2022</b><br>NFT / Mining App / Audit
+<div class="timeline-box c2">
+<b>2022</b><br><br>
+Coinsbit Listing<br>
+NFT Launch<br>
+CryptoWheel / CryptoCube<br>
+Mining App Launch<br>
+Digifinex Listing<br>
+InterFi Audit<br>
+TrustWallet Listing
 </div>
 </div>
 
 <div class="timeline-item left">
-<div class="timeline-box">
-<b>2023</b><br>DEX Expansion / AMA
+<div class="timeline-box c3">
+<b>2023</b><br><br>
+MDEX / Biswap / P2B<br>
+Market Maker System<br>
+IoTeX Korea AMA<br>
+17.4K Mining Users
 </div>
 </div>
 
 <div class="timeline-item right">
-<div class="timeline-box">
-<b>2024</b><br>PINU100X Launch / LBank
+<div class="timeline-box c4">
+<b>2024</b><br><br>
+Mining Service Closed<br>
+DEX-TRADE / Bifinance<br><br>
+<b>PINU100X Launch</b><br>
+QuickSwap / CMC<br>
+InterFi Audit<br>
+LBank Listing
 </div>
 </div>
 
 <div class="timeline-item left">
-<div class="timeline-box">
-<b>2025</b><br>Cross-chain Swap
+<div class="timeline-box c5">
+<b>2025</b><br><br>
+Tapbit / PointPay<br>
+AscendEX Listing<br><br>
+Cross-chain Swap Launch<br>
+(BSC ↔ Polygon)
 </div>
 </div>
 
 <div class="timeline-item right">
-<div class="timeline-box">
-<b>2026</b><br>TELTLK Collaboration
+<div class="timeline-box c6">
+<b>2026</b><br><br>
+TELTLK Collaboration
 </div>
 </div>
 
@@ -318,13 +286,19 @@ PINU Audit | PINU100X Audit | Swap
 
 </section>
 
-<section id="partners">
+<!-- ===== EXCHANGES ===== -->
+<section id="exchanges" class="exchange-section">
 <h2>Exchanges</h2>
 
+<h3>PINU (BSC)</h3>
 <div class="partner-grid">
 <img src="digifinex.png">
 <img src="dextrade.png">
 <img src="tapbit.png">
+</div>
+
+<h3>PINU100X (Polygon)</h3>
+<div class="partner-grid">
 <img src="lbank.png">
 <img src="ascendex.png">
 </div>
@@ -334,14 +308,6 @@ PINU Audit | PINU100X Audit | Swap
 <footer>
 <p>© 2026 Pi INU Project</p>
 </footer>
-
-<script>
-function goTranslate(lang){
-    const url = encodeURIComponent("https://pi-inu.github.io/");
-    window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl="+lang+"&u="+url;
-}
-</script>
 
 </body>
 </html>
