@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="PINU_small.png">
 
 <meta charset="UTF-8">
@@ -11,47 +10,47 @@
 
 <style>
 
-/* Base */
+/* ===== BASE ===== */
 body {
     font-family: 'Segoe UI', sans-serif;
     margin:0;
     background:#f4f7f6;
-    scroll-behavior:smooth;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 header {
-    position: relative;
     background: linear-gradient(135deg, #4a148c, #7b1fa2);
     color:#fff;
     text-align:center;
     padding:100px 20px;
+    position:relative;
     overflow:hidden;
 }
 
+/* glow */
 header::before {
     content:'';
     position:absolute;
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
     background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
-    top:-100px;
+    top:-200px;
     left:50%;
     transform:translateX(-50%);
-    animation: glowMove 6s infinite linear;
+    animation: glow 6s infinite ease-in-out;
 }
 
-@keyframes glowMove {
-    0% { transform:translateX(-50%) translateY(0); }
+@keyframes glow {
+    0%,100% { transform:translateX(-50%) translateY(0); }
     50% { transform:translateX(-50%) translateY(40px); }
-    100% { transform:translateX(-50%) translateY(0); }
 }
 
 header h1 { font-size:3rem; margin:0; }
 
-.tagline { margin-top:10px; font-size:1.2rem; opacity:0.9; }
-.badges { margin-top:15px; font-size:0.9rem; opacity:0.9; }
+.tagline { margin-top:10px; opacity:0.9; }
+.badges { margin-top:10px; font-size:0.9rem; }
 
+/* CTA */
 .cta-btn {
     display:inline-block;
     margin-top:20px;
@@ -66,10 +65,10 @@ header h1 { font-size:3rem; margin:0; }
 
 .cta-btn:hover {
     transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* AUDIT */
+/* ===== TOP BARS ===== */
 .audit-bar {
     background:#212121;
     color:#fff;
@@ -77,27 +76,25 @@ header h1 { font-size:3rem; margin:0; }
     padding:10px;
 }
 
-/* LANGUAGE */
 .lang-bar {
     display:flex;
     justify-content:center;
-    gap:12px;
+    gap:10px;
     padding:8px;
     background:#111;
 }
 
 .lang-bar img {
     width:28px;
-    height:20px;
     cursor:pointer;
     transition:0.2s;
 }
 
 .lang-bar img:hover {
-    transform:scale(1.15);
+    transform:scale(1.2);
 }
 
-/* SECTION */
+/* ===== SECTION (FIXED!!) ===== */
 section {
     max-width:1000px;
     margin:40px auto;
@@ -105,22 +102,37 @@ section {
     background:#fff;
     border-radius:12px;
     box-shadow:0 6px 20px rgba(0,0,0,0.05);
+
     opacity:0;
-    transform:translateY(40px);
-    transition:0.8s ease;
+    transform:translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
-section.show {
-    opacity:1;
-    transform:translateY(0);
+/* sequential delay */
+section:nth-of-type(1){ animation-delay:0.2s; }
+section:nth-of-type(2){ animation-delay:0.4s; }
+section:nth-of-type(3){ animation-delay:0.6s; }
+section:nth-of-type(4){ animation-delay:0.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-/* TOKEN */
+/* ===== TOKEN ===== */
 .token-box {
     background:#ede7f6;
     padding:20px;
     border-radius:10px;
     margin-bottom:20px;
+    transition:0.3s;
+}
+
+.token-box:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .token-title {
@@ -131,27 +143,62 @@ section.show {
 
 .token-title img { width:28px; }
 
-/* HISTORY */
-.history-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+/* ===== TIMELINE ===== */
+.timeline {
+    position:relative;
+    margin-top:40px;
 }
 
-.history-box {
+/* vertical line */
+.timeline::before {
+    content:'';
+    position:absolute;
+    left:50%;
+    width:4px;
+    height:100%;
+    background:#ccc;
+    transform:translateX(-50%);
+}
+
+.timeline-item {
+    width:50%;
+    padding:20px;
+    position:relative;
+}
+
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+
+.timeline-box {
+    background:#4a148c;
+    color:#fff;
     padding:20px;
     border-radius:12px;
-    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
 
-.y2021 { background:#6a1b9a; }
-.y2022 { background:#3949ab; }
-.y2023 { background:#00897b; }
-.y2024 { background:#ef6c00; }
-.y2025 { background:#c62828; }
-.y2026 { background:#546e7a; }
+.timeline-box:hover {
+    transform:scale(1.05);
+}
 
-/* PARTNERS */
+/* dot */
+.timeline-item::before {
+    content:'';
+    position:absolute;
+    top:30px;
+    right:-10px;
+    width:20px;
+    height:20px;
+    background:#ffca28;
+    border-radius:50%;
+}
+
+.timeline-item.right::before {
+    left:-10px;
+}
+
+/* ===== PARTNERS ===== */
 .partner-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -163,9 +210,14 @@ section.show {
     max-width:220px;
     height:60px;
     object-fit:contain;
+    transition:0.3s;
 }
 
-/* FOOTER */
+.partner-grid img:hover {
+    transform:scale(1.15);
+}
+
+/* ===== FOOTER ===== */
 footer {
     text-align:center;
     padding:40px;
@@ -181,20 +233,13 @@ footer {
 PINU Audit | PINU100X Audit | Swap
 </div>
 
-<!-- Language (current tab version) -->
 <div class="lang-bar">
-
-<!-- English (Original) -->
-<a href="#" onclick="location.href='https://pi-inu.github.io'; return false;">
-<img src="https://flagcdn.com/w40/us.png" alt="English">
-</a>
-
-<a href="#" onclick="goTranslate('ko'); return false;"><img src="https://flagcdn.com/w40/kr.png"></a>
+<a href="https://pi-inu.github.io"><img src="https://flagcdn.com/w40/us.png"></a>
+<a href="#" onclick="goTranslate('ko')"><img src="https://flagcdn.com/w40/kr.png"></a>
 <a href="#" onclick="goTranslate('ja')"><img src="https://flagcdn.com/w40/jp.png"></a>
 <a href="#" onclick="goTranslate('zh-CN')"><img src="https://flagcdn.com/w40/cn.png"></a>
 <a href="#" onclick="goTranslate('vi')"><img src="https://flagcdn.com/w40/vn.png"></a>
 <a href="#" onclick="goTranslate('id')"><img src="https://flagcdn.com/w40/id.png"></a>
-
 </div>
 
 <header>
@@ -203,8 +248,8 @@ PINU Audit | PINU100X Audit | Swap
 <div class="badges">Audited | CMC Listed | Multi-Exchange Listed</div>
 <a class="cta-btn" href="#partners">View Exchanges</a>
 <br>
-<img src="PINU.png" style="width:80px;">
-<img src="PINU100X.png" style="width:80px;">
+<img src="PINU.png" width="80">
+<img src="PINU100X.png" width="80">
 </header>
 
 <section>
@@ -215,7 +260,7 @@ PINU Audit | PINU100X Audit | Swap
 <img src="PINU.png"><h3>PINU</h3>
 </div>
 <p>The original classic Pi Network meme since 2021</p>
-<p><a href="https://coinmarketcap.com/currencies/pi-inu/">CoinMarketCap</a></p>
+<p><a href="https://coinmarketcap.com/currencies/pi-inu/" target="_blank">CoinMarketCap</a></p>
 </div>
 
 <div class="token-box">
@@ -223,7 +268,7 @@ PINU Audit | PINU100X Audit | Swap
 <img src="PINU100X.png"><h3>PINU100X</h3>
 </div>
 <p>Upgraded Pi INU 2.0 since 2024</p>
-<p><a href="https://coinmarketcap.com/currencies/pi-inu-100x/">CoinMarketCap</a></p>
+<p><a href="https://coinmarketcap.com/currencies/pi-inu-100x/" target="_blank">CoinMarketCap</a></p>
 </div>
 
 </section>
@@ -231,13 +276,44 @@ PINU Audit | PINU100X Audit | Swap
 <section>
 <h2>History</h2>
 
-<div class="history-grid">
-<div class="history-box y2021">2021 Launch / CMC / LLC</div>
-<div class="history-box y2022">2022 NFT / Mining / Audit</div>
-<div class="history-box y2023">2023 DEX / AMA</div>
-<div class="history-box y2024">2024 PINU100X Launch</div>
-<div class="history-box y2025">2025 Cross-chain</div>
-<div class="history-box y2026">2026 TELTLK</div>
+<div class="timeline">
+
+<div class="timeline-item left">
+<div class="timeline-box">
+<b>2021</b><br>Launch / PancakeSwap / CMC / LLC
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-box">
+<b>2022</b><br>NFT / Mining App / Audit
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-box">
+<b>2023</b><br>DEX Expansion / AMA
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-box">
+<b>2024</b><br>PINU100X Launch / LBank
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-box">
+<b>2025</b><br>Cross-chain Swap
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-box">
+<b>2026</b><br>TELTLK Collaboration
+</div>
+</div>
+
 </div>
 
 </section>
@@ -260,24 +336,10 @@ PINU Audit | PINU100X Audit | Swap
 </footer>
 
 <script>
-/* Scroll reveal */
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-    const trigger = window.innerHeight * 0.85;
-    sections.forEach(sec => {
-        if(sec.getBoundingClientRect().top < trigger){
-            sec.classList.add("show");
-        }
-    });
-});
-
-/* Translate (fixed version) */
 function goTranslate(lang){
-    const originalUrl = "https://pi-inu.github.io/";
-    const url = encodeURIComponent(originalUrl);
-
+    const url = encodeURIComponent("https://pi-inu.github.io/");
     window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
+    "https://translate.google.com/translate?sl=auto&tl="+lang+"&u="+url;
 }
 </script>
 
