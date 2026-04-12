@@ -37,7 +37,58 @@ header .tagline {
     text-decoration:none;
     font-weight:bold;
 }
+.hero-logos {
+    position: relative;
+}
 
+.hero-logos img {
+    position: absolute;
+    width: 120px;
+    opacity: 0.9;
+}
+
+.logo-left {
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float 4s ease-in-out infinite;
+}
+
+.logo-right {
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* 배경 로고 */
+.bg-logo {
+    position: absolute;
+    width: 400px;
+    opacity: 0.05;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bg-left { left: 5%; }
+.bg-right { right: 5%; }
+
+@keyframes float {
+    0% { transform: translateY(-50%) translateY(0px); }
+    50% { transform: translateY(-50%) translateY(-10px); }
+    100% { transform: translateY(-50%) translateY(0px); }
+}
+
+/* TOKEN ICON */
+.token-title {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.token-title img {
+    width:28px;
+}
 /* AUDIT BAR */
 .audit-bar {
     background:#212121;
@@ -136,18 +187,26 @@ footer {
 <a href="cross-chain-swap.html">Swap</a>
 </div>
 
-<header>
-    <h1>Pi INU Ecosystem</h1>
+<header class="hero-logos">
 
-    <div class="tagline">
-        Building a Sustainable Meme Ecosystem Since 2021
-    </div>
+<img src="PINU.png" class="bg-logo bg-left">
+<img src="PINU100X.png" class="bg-logo bg-right">
 
-    <div class="badges">
-        Audited | CMC Listed | Multi-Exchange Listed | Since 2021
-    </div>
+<img src="PINU.png" class="logo-left">
+<img src="PINU100X.png" class="logo-right">
 
-    <a class="cta-btn" href="#partners">View Exchanges</a>
+<h1>Pi INU Ecosystem</h1>
+
+<div class="tagline">
+Building a Sustainable Meme Ecosystem Since 2021
+</div>
+
+<div class="badges">
+Audited | CMC Listed | Multi-Exchange Listed | Since 2021
+</div>
+
+<a class="cta-btn" href="#partners">View Exchanges</a>
+
 </header>
 
 <section>
@@ -191,24 +250,36 @@ The community continues to grow across platforms including X, Telegram, YouTube,
 
 </div>
 </section>
-
 <section>
 <h2>Tokens</h2>
 
 <div class="token-box">
+
+<div class="token-title">
+<img src="PINU.png">
 <h3>PINU</h3>
+</div>
+
+<p><b>The original classic Pi Network meme since 2021</b></p>
 <p>Listed on Digifinex / Dextrade / Tapbit</p>
 <p><a href="#">CoinMarketCap</a></p>
+
 </div>
 
 <div class="token-box">
+
+<div class="token-title">
+<img src="PINU100X.png">
 <h3>PINU100X</h3>
+</div>
+
+<p><b>Upgraded Pi INU 2.0 with enhanced contract since 2024</b></p>
 <p>Listed on LBank / AscendEX</p>
 <p><a href="#">CoinMarketCap</a></p>
+
 </div>
 
 </section>
-
 <section>
 <h2>History</h2>
 
