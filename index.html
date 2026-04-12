@@ -33,12 +33,21 @@ body {
 
 /* ===== HERO ===== */
 header {
-    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+    position: relative;
+    background: linear-gradient(270deg, #4a148c, #7b1fa2, #6a1b9a, #8e24aa);
+    background-size: 400% 400%; /* 핵심 */
+    animation: gradientFlow 12s ease infinite;
+
     color:#fff;
     text-align:center;
-    padding:60px 20px; 
+    padding:60px 20px;
+    overflow:hidden;
 }
-
+    @keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 header h1 { font-size:3rem; margin:0; }
 
 .tagline { margin-top:10px; }
