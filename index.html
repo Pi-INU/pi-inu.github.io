@@ -207,7 +207,27 @@ a {
     color:#4a148c;
     font-weight:bold;
 }
+/* Language bar */
+.lang-bar {
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:8px;
+    background:#111;
+}
 
+.lang-bar img {
+    width:28px;
+    height:20px;
+    cursor:pointer;
+    border-radius:3px;
+    transition:0.2s;
+}
+
+.lang-bar img:hover {
+    transform:scale(1.15);
+    box-shadow:0 3px 8px rgba(0,0,0,0.4);
+}
 </style>
 </head>
 
@@ -218,7 +238,30 @@ a {
 <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
 <a href="cross-chain-swap.html">Swap</a>
 </div>
+<!-- Language Selector -->
+<div class="lang-bar">
 
+<a href="https://translate.google.com/translate?sl=auto&tl=ko&u=" target="_blank" onclick="this.href=this.href+encodeURIComponent(window.location.href)">
+<img src="https://flagcdn.com/w40/kr.png" alt="Korean">
+</a>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=ja&u=" target="_blank" onclick="this.href=this.href+encodeURIComponent(window.location.href)">
+<img src="https://flagcdn.com/w40/jp.png" alt="Japanese">
+</a>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=" target="_blank" onclick="this.href=this.href+encodeURIComponent(window.location.href)">
+<img src="https://flagcdn.com/w40/cn.png" alt="Chinese">
+</a>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=vi&u=" target="_blank" onclick="this.href=this.href+encodeURIComponent(window.location.href)">
+<img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese">
+</a>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=id&u=" target="_blank" onclick="this.href=this.href+encodeURIComponent(window.location.href)">
+<img src="https://flagcdn.com/w40/id.png" alt="Indonesian">
+</a>
+
+</div>
 <header>
 <h1>Pi INU Ecosystem</h1>
 
