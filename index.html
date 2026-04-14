@@ -496,23 +496,23 @@ footer {
 <img src="https://flagcdn.com/w40/us.png" alt="English">
 </a>
 
-<a href="#" onclick="doGTranslate('ko')">
+<a href="#" onclick="doGTranslate('ko'); return false;">
 <img src="https://flagcdn.com/w40/kr.png">
 </a>
 
-<a href="#" onclick="doGTranslate('ja')">
+<a href="#" onclick="doGTranslate('ja'); return false;">
 <img src="https://flagcdn.com/w40/jp.png">
 </a>
 
-<a href="#" onclick="doGTranslate('zh-CN')">
+<a href="#" onclick="doGTranslate('zh-CN'); return false;">
 <img src="https://flagcdn.com/w40/cn.png">
 </a>
 
-<a href="#" onclick="doGTranslate('vi')">
+<a href="#" onclick="doGTranslate('vi'); return false;">
 <img src="https://flagcdn.com/w40/vn.png">
 </a>
 
-<a href="#" onclick="doGTranslate('id')">
+<a href="#" onclick="doGTranslate('id'); return false;">
 <img src="https://flagcdn.com/w40/id.png">
 </a>
 
@@ -840,15 +840,6 @@ window.addEventListener("load", revealSections);
 window.addEventListener("scroll", revealSections);
 
 
-/* Translation (fixed version) */
-function goTranslate(lang){
-    const originalUrl = "https://pi-inu.github.io/";
-    const url = encodeURIComponent(originalUrl);
-
-
-    window.location.href =
-    "https://translate.googleusercontent.com/translate?sl=auto&tl=" + lang + "&u=" + url;
-}
 
 </script>
     <script>
@@ -862,13 +853,17 @@ function googleTranslateElementInit() {
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
+<script>
 function doGTranslate(lang) {
-    const select = document.querySelector(".goog-te-combo");
-    if (!select) return;
+    const interval = setInterval(() => {
+        const select = document.querySelector(".goog-te-combo");
 
-    select.value = lang;
-    select.dispatchEvent(new Event("change"));
+        if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event("change"));
+            clearInterval(interval);
+        }
+    }, 200); // 0.2초마다 체크
 }
 </script>
 </body>
