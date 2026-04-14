@@ -9,7 +9,9 @@
 <title>Pi INU Ecosystem</title>
 
 <style>
-
+#google_translate_element {
+    display:none;
+}
     /* ===== SIMPLE PARALLAX ===== */
 section:first-of-type {
     background: 
@@ -494,23 +496,23 @@ footer {
 <img src="https://flagcdn.com/w40/us.png" alt="English">
 </a>
 
-<a href="#" onclick="goTranslate('ko'); return false;">
+<a href="#" onclick="doGTranslate('ko')">
 <img src="https://flagcdn.com/w40/kr.png">
 </a>
 
-<a href="#" onclick="goTranslate('ja'); return false;">
+<a href="#" onclick="doGTranslate('ja')">
 <img src="https://flagcdn.com/w40/jp.png">
 </a>
 
-<a href="#" onclick="goTranslate('zh-CN'); return false;">
+<a href="#" onclick="doGTranslate('zh-CN')">
 <img src="https://flagcdn.com/w40/cn.png">
 </a>
 
-<a href="#" onclick="goTranslate('vi'); return false;">
+<a href="#" onclick="doGTranslate('vi')">
 <img src="https://flagcdn.com/w40/vn.png">
 </a>
 
-<a href="#" onclick="goTranslate('id'); return false;">
+<a href="#" onclick="doGTranslate('id')">
 <img src="https://flagcdn.com/w40/id.png">
 </a>
 
@@ -521,7 +523,7 @@ footer {
 <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
 <a href="cross-chain-swap.html">Swap</a>
 </div>
-
+<div id="google_translate_element"></div>
 <!-- ===== HERO ===== -->
 <header>
 <h1>Pi INU Ecosystem</h1>
@@ -843,11 +845,31 @@ function goTranslate(lang){
     const originalUrl = "https://pi-inu.github.io/";
     const url = encodeURIComponent(originalUrl);
 
-    window.open(
-    "https://translate.googleusercontent.com/translate?sl=auto&tl=" + lang + "&u=" + url,
-    "_blank"
+
+    window.location.href =
+    "https://translate.googleusercontent.com/translate?sl=auto&tl=" + lang + "&u=" + url;
 }
 
+</script>
+    <script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'ko,ja,zh-CN,vi,id',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+function doGTranslate(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (!select) return;
+
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+}
 </script>
 </body>
 </html>
