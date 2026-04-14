@@ -1,4 +1,4 @@
-New.jpg 표시 안되는데? <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,7 +16,7 @@ section:first-of-type {
     linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
     url('New.jpg') center/cover no-repeat;
 
-    background-attachment: fixed; /* 🔥 핵심 */
+    background-attachment: fixed; 
 }
     @media (max-width:768px){
     section:first-of-type {
@@ -48,7 +48,7 @@ body {
 header {
     position: relative;
     background: linear-gradient(270deg, #4a148c, #7b1fa2, #6a1b9a, #8e24aa);
-    background-size: 400% 400%; /* 핵심 */
+    background-size: 400% 400%; 
     animation: gradientFlow 12s ease infinite;
 
     color:#fff;
@@ -150,7 +150,7 @@ section {
     top: 25px;
     z-index: 2;
 
-    /* 🔥 추가 (핵심) */
+    
     animation: timelinePulse 2.5s ease-in-out infinite;
 }
 
@@ -465,7 +465,7 @@ footer {
     /* sns (final version) */
     .sns-bar {
         display:grid;
-        grid-template-columns: repeat(4, 1fr); /* 🔥 핵심 수정 */
+        grid-template-columns: repeat(4, 1fr); 
         gap:15px !important;
         justify-items:center;
     }
