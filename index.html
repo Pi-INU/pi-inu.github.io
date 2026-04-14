@@ -15,7 +15,7 @@ section:first-of-type {
     background: 
     linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
     url('New.jpg') center/cover no-repeat;
-
+  <section class="history-section">
     background-attachment: fixed; 
 }
     @media (max-width:768px){
@@ -33,6 +33,10 @@ section:first-of-type {
     100% {
         background: #e0e0e0;
     }
+}
+    .history-section {
+    animation: historyGradient 6s ease-in-out infinite alternate;
+    transition: all 0.5s ease;
 }
 /* ===== BASE ===== */
 body {
@@ -696,8 +700,7 @@ Decoin, Dsdaq, Vindax, Azbit, Coinsbit, P2B, Bifinance, PointPay, Top.one
 </section>
 
 <!-- ===== HISTORY ===== -->
-<section>
-    <section class="history-section">
+<section class="history-section">
 <h2>History</h2>
 
 <div class="timeline">
