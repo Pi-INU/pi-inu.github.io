@@ -9,10 +9,7 @@
 <title>Pi INU Ecosystem</title>
 
 <style>
-    .about-section {
-    position: relative;
-    overflow: hidden;
-}
+   
     .about-section::before {
     content: "";
     position: absolute;
@@ -58,7 +55,7 @@ section:first-of-type {
     background: 
     linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
     url('New.jpg') center/cover no-repeat;
-  <section class="history-section">
+
     background-attachment: fixed; 
 }
     @media (max-width:768px){
@@ -66,17 +63,7 @@ section:first-of-type {
         background-attachment: scroll;
     }
 }
-    @keyframes historyGradient {
-    0% {
-        background: #ffffff;
-    }
-    50% {
-        background: #f2f2f2;
-    }
-    100% {
-        background: #e0e0e0;
-    }
-}
+    
 
 /* ===== BASE ===== */
 body {
@@ -84,7 +71,43 @@ body {
     margin:0;
     background:#f4f7f6;
 }
+.about-section {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+}
 
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,255,255,0.25) 50%,
+        transparent 60%
+    );
+
+    transform: rotate(25deg);
+    animation: shineMove 3s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes shineMove {
+    0% { transform: translateX(-100%) rotate(25deg); }
+    100% { transform: translateX(100%) rotate(25deg); }
+}
 /* ===== TOP BAR ===== */
 .audit-bar {
     background:#212121;
@@ -630,7 +653,7 @@ Audited | CMC Listed | Multi-Exchange Listed
 
 </div>
 </header>
-<section>
+<section class="about-section">
 <h2>About Pi INU</h2>
 
 <div class="highlight-box">
