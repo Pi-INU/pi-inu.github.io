@@ -442,7 +442,48 @@ footer {
     }
 
 }
-    
+/* ===== MOBILE FIX PATCH ===== */
+@media (max-width: 768px) {
+
+    /* 1. prevent horizontal scroll (핵심) */
+    html, body {
+        overflow-x:hidden;
+    }
+
+    * {
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    /* 2. SNS → 3 x 2 grid */
+    .sns-bar {
+        display:grid !important;
+        grid-template-columns:repeat(3, 1fr);
+        gap:20px;
+        justify-items:center;
+    }
+
+    .sns-bar img {
+        width:42px;
+        height:42px;
+    }
+
+    /* 3. exchange logos center */
+    .partner-grid {
+        justify-items:center;
+        text-align:center;
+    }
+
+    .partner-grid a {
+        display:flex;
+        justify-content:center;
+    }
+
+    .partner-grid img {
+        margin:0 auto;
+    }
+
+}    
 </style>
 </head>
 
