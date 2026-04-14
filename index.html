@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+New.jpg 표시 안되는데? <!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -9,9 +9,7 @@
 <title>Pi INU Ecosystem</title>
 
 <style>
-#google_translate_element {
-    display:none;
-}
+
     /* ===== SIMPLE PARALLAX ===== */
 section:first-of-type {
     background: 
@@ -468,13 +466,13 @@ footer {
     .sns-bar {
         display:grid;
         grid-template-columns:repeat(3, 1fr);
-        gap:10px !important;
+        gap:15px !important;
         justify-items:center;
     }
 
     .sns-bar img {
-        width:36px;
-        height:36px;
+        width:42px;
+        height:42px;
     }
 
     /* language flags */
@@ -496,23 +494,23 @@ footer {
 <img src="https://flagcdn.com/w40/us.png" alt="English">
 </a>
 
-<a href="#" onclick="doGTranslate('ko'); return false;">
+<a href="#" onclick="goTranslate('ko'); return false;">
 <img src="https://flagcdn.com/w40/kr.png">
 </a>
 
-<a href="#" onclick="doGTranslate('ja'); return false;">
+<a href="#" onclick="goTranslate('ja'); return false;">
 <img src="https://flagcdn.com/w40/jp.png">
 </a>
 
-<a href="#" onclick="doGTranslate('zh-CN'); return false;">
+<a href="#" onclick="goTranslate('zh-CN'); return false;">
 <img src="https://flagcdn.com/w40/cn.png">
 </a>
 
-<a href="#" onclick="doGTranslate('vi'); return false;">
+<a href="#" onclick="goTranslate('vi'); return false;">
 <img src="https://flagcdn.com/w40/vn.png">
 </a>
 
-<a href="#" onclick="doGTranslate('id'); return false;">
+<a href="#" onclick="goTranslate('id'); return false;">
 <img src="https://flagcdn.com/w40/id.png">
 </a>
 
@@ -523,7 +521,7 @@ footer {
 <a href="PINU100X_AuditReport_InterFi.pdf" target="_blank">PINU100X Audit</a> |
 <a href="cross-chain-swap.html">Swap</a>
 </div>
-<div id="google_translate_element"></div>
+
 <!-- ===== HERO ===== -->
 <header>
 <h1>Pi INU Ecosystem</h1>
@@ -840,31 +838,15 @@ window.addEventListener("load", revealSections);
 window.addEventListener("scroll", revealSections);
 
 
+/* Translation (fixed version) */
+function goTranslate(lang){
+    const originalUrl = "https://pi-inu.github.io/";
+    const url = encodeURIComponent(originalUrl);
 
-</script>
-    <script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'ko,ja,zh-CN,vi,id',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
+    window.location.href =
+    "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
 }
-</script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-function doGTranslate(lang) {
-    const interval = setInterval(() => {
-        const select = document.querySelector(".goog-te-combo");
-
-        if (select) {
-            select.value = lang;
-            select.dispatchEvent(new Event("change"));
-            clearInterval(interval);
-        }
-    }, 200); // 0.2초마다 체크
-}
 </script>
 </body>
 </html>
