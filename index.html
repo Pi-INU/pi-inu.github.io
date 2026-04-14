@@ -81,6 +81,9 @@ section {
     border-radius:12px;
     margin-bottom:25px;
 }
+    .token-box p {
+    word-break: break-all;
+}
 
 .token-title {
     display:flex;
@@ -351,8 +354,18 @@ footer {
 }
 
 
-/* ===== MOBILE RESPONSIVE (DO NOT MODIFY EXISTING) ===== */
+/* ===== MOBILE RESPONSIVE CLEAN ===== */
 @media (max-width: 768px) {
+
+    /* prevent horizontal scroll */
+    html, body {
+        overflow-x:hidden;
+    }
+
+    * {
+        max-width:100%;
+        box-sizing:border-box;
+    }
 
     /* header */
     header {
@@ -387,7 +400,12 @@ footer {
         width:40px;
     }
 
-    /* timeline → single column */
+    /* contract address line break */
+    .token-box p {
+        word-break: break-all;
+    }
+
+    /* timeline */
     .timeline::after {
         left:20px;
     }
@@ -413,63 +431,10 @@ footer {
         text-align:center;
     }
 
-    /* exchange grid */
+    /* exchange */
     .partner-grid {
         grid-template-columns:1fr;
         gap:20px;
-    }
-
-    .partner-grid img {
-        max-width:180px;
-        margin:0 auto;
-    }
-
-    /* sns */
-    .sns-bar {
-        gap:20px;
-        flex-wrap:wrap;
-    }
-
-    .sns-bar img {
-        width:40px;
-        height:40px;
-    }
-
-    /* language flags */
-    .lang-bar img {
-        width:24px;
-        height:18px;
-    }
-
-}
-/* ===== MOBILE FIX PATCH ===== */
-@media (max-width: 768px) {
-
-    /* 1. prevent horizontal scroll (핵심) */
-    html, body {
-        overflow-x:hidden;
-    }
-
-    * {
-        max-width:100%;
-        box-sizing:border-box;
-    }
-
-    /* 2. SNS → 3 x 2 grid */
-    .sns-bar {
-        display:grid !important;
-        grid-template-columns:repeat(3, 1fr);
-        gap:20px;
-        justify-items:center;
-    }
-
-    .sns-bar img {
-        width:42px;
-        height:42px;
-    }
-
-    /* 3. exchange logos center */
-    .partner-grid {
         justify-items:center;
         text-align:center;
     }
@@ -480,10 +445,30 @@ footer {
     }
 
     .partner-grid img {
+        max-width:180px;
         margin:0 auto;
     }
 
-}    
+    /* sns (final version) */
+    .sns-bar {
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:30px; /* reduced spacing */
+        justify-items:center;
+    }
+
+    .sns-bar img {
+        width:42px;
+        height:42px;
+    }
+
+    /* language flags */
+    .lang-bar img {
+        width:24px;
+        height:18px;
+    }
+
+}
 </style>
 </head>
 
