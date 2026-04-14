@@ -349,6 +349,100 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+/* ===== MOBILE RESPONSIVE (DO NOT MODIFY EXISTING) ===== */
+@media (max-width: 768px) {
+
+    /* header */
+    header {
+        padding:40px 15px;
+    }
+
+    header h1 {
+        font-size:2rem;
+    }
+
+    .tagline {
+        font-size:0.9rem;
+    }
+
+    .badges {
+        font-size:0.8rem;
+    }
+
+    /* section */
+    section {
+        margin:20px 10px;
+        padding:20px;
+    }
+
+    /* tokens */
+    .token-title {
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .token-title img {
+        width:40px;
+    }
+
+    /* timeline → single column */
+    .timeline::after {
+        left:20px;
+    }
+
+    .timeline-item {
+        width:100%;
+        padding-left:50px;
+        padding-right:10px;
+        margin-bottom:30px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left:0;
+    }
+
+    .timeline-item::before {
+        left:8px !important;
+        right:auto;
+    }
+
+    .timeline-content {
+        text-align:center;
+    }
+
+    /* exchange grid */
+    .partner-grid {
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .partner-grid img {
+        max-width:180px;
+        margin:0 auto;
+    }
+
+    /* sns */
+    .sns-bar {
+        gap:20px;
+        flex-wrap:wrap;
+    }
+
+    .sns-bar img {
+        width:40px;
+        height:40px;
+    }
+
+    /* language flags */
+    .lang-bar img {
+        width:24px;
+        height:18px;
+    }
+
+}
+    
 </style>
 </head>
 
