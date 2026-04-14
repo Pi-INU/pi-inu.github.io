@@ -9,7 +9,20 @@
 <title>Pi INU Ecosystem</title>
 
 <style>
+background-attachment: fixed;
+    /* ===== SIMPLE PARALLAX ===== */
+section:first-of-type {
+    background: 
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    url('New.jpg') center/cover no-repeat;
 
+    background-attachment: fixed; /* 🔥 핵심 */
+}
+    @media (max-width:768px){
+    section:first-of-type {
+        background-attachment: scroll;
+    }
+}
 /* ===== BASE ===== */
 body {
     font-family: 'Segoe UI', sans-serif;
