@@ -9,7 +9,22 @@
 <title>Pi INU Ecosystem</title>
 
 <style>
-
+.history-section {
+    background: linear-gradient(120deg, #ffffff, #f2f2f2, #e0e0e0);
+    background-size: 200% 200%;
+    animation: flowMove 8s ease infinite;
+}
+    @keyframes flowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
     /* ===== SIMPLE PARALLAX ===== */
 section:first-of-type {
     background: 
@@ -34,10 +49,7 @@ section:first-of-type {
         background: #e0e0e0;
     }
 }
-    .history-section {
-    animation: historyGradient 6s ease-in-out infinite alternate;
-    transition: all 0.5s ease;
-}
+
 /* ===== BASE ===== */
 body {
     font-family: 'Segoe UI', sans-serif;
