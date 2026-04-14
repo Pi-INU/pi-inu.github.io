@@ -843,8 +843,9 @@ function goTranslate(lang){
     const originalUrl = "https://pi-inu.github.io/";
     const url = encodeURIComponent(originalUrl);
 
-    window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
+    window.open(
+    "https://translate.googleusercontent.com/translate?sl=auto&tl=" + lang + "&u=" + url,
+    "_blank"
 }
 
 </script>
