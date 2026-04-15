@@ -499,13 +499,11 @@ footer {
 /* ===== MOBILE RESPONSIVE CLEAN ===== */
 @media (max-width: 768px) {
   section.hover-active,
-.about-section.hover-active,
-.history-section.hover-active {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-}
-
-}
+  .about-section.hover-active,
+  .history-section.hover-active {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
     /* prevent horizontal scroll */
     html, body {
         overflow-x:hidden;
@@ -654,8 +652,8 @@ Audited | CMC Listed | Multi-Exchange Listed
 <img src="PINU.png" width="90">
 <img src="Pi.png" width="90">
 <img src="PINU100X.png" width="90">
-<p>
-    <div class="sns-bar">
+<p></p>
+  <div class="sns-bar">
 
 <a href="https://twitter.com/Pi_INU_Token" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg">
@@ -941,6 +939,7 @@ function revealSections(){
 
         if(rect.top < triggerTop && rect.bottom > triggerBottom){
             sec.classList.add("hover-active");
+           sec.classList.add("show");  
         } else {
             sec.classList.remove("hover-active"); 
         }
