@@ -498,128 +498,147 @@ footer {
 
 /* ===== MOBILE RESPONSIVE CLEAN ===== */
 @media (max-width: 768px) {
+
+  /* ✅ hover 효과 완전 제거 */
   section.hover-active,
   .about-section.hover-active,
   .history-section.hover-active {
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      transform: none !important;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05) !important;
   }
-    /* prevent horizontal scroll */
-    html, body {
-        overflow-x:hidden;
-    }
 
-    * {
-        max-width:100%;
-        box-sizing:border-box;
-    }
-    .lang-bar {
-        display: none;
-    }
-    /* header */
-    header {
-        padding:40px 15px;
-    }
+  /* ✅ 모든 섹션 항상 보이게 */
+  section,
+  .about-section,
+  .history-section {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+  }
 
-    header h1 {
-        font-size:2rem;
-    }
+  /* ✅ 애니메이션 제거 (모바일 최적화 핵심) */
+  .sns-bar img,
+  .timeline-item::before,
+  .about-section::after {
+      animation: none !important;
+  }
 
-    .tagline {
-        font-size:0.9rem;
-    }
+  /* prevent horizontal scroll */
+  html, body {
+      overflow-x:hidden;
+  }
 
-    .badges {
-        font-size:0.8rem;
-    }
+  * {
+      max-width:100%;
+      box-sizing:border-box;
+  }
 
-    /* section */
-    section {
-        margin:20px 10px;
-        padding:20px;
-           width:96%;
-    }
+  .lang-bar {
+      display: none;
+  }
 
-    /* tokens */
-    .token-title {
-        flex-direction:column;
-        text-align:center;
-    }
+  /* header */
+  header {
+      padding:40px 15px;
+  }
 
-    .token-title img {
-        width:40px;
-    }
+  header h1 {
+      font-size:2rem;
+  }
 
-    /* contract address line break */
-    .token-box p {
-        word-break: break-all;
-    }
+  .tagline {
+      font-size:0.9rem;
+  }
 
-    /* timeline */
-    .timeline::after {
-        left:20px;
-    }
+  .badges {
+      font-size:0.8rem;
+  }
 
-    .timeline-item {
-        width:100%;
-        padding-left:50px;
-        padding-right:10px;
-        margin-bottom:30px;
-    }
+  /* section */
+  section {
+      margin:20px 10px;
+      padding:20px;
+      width:96%;
+  }
 
-    .timeline-item.left,
-    .timeline-item.right {
-        left:0;
-    }
+  /* tokens */
+  .token-title {
+      flex-direction:column;
+      text-align:center;
+  }
 
-    .timeline-item::before {
-        left:8px !important;
-        right:auto;
-    }
+  .token-title img {
+      width:40px;
+  }
 
-    .timeline-content {
-        text-align:center;
-    }
+  .token-box p {
+      word-break: break-all;
+  }
 
-    /* exchange */
-    .partner-grid {
-        grid-template-columns:1fr;
-        gap:20px;
-        justify-items:center;
-        text-align:center;
-    }
+  /* timeline */
+  .timeline::after {
+      left:20px;
+  }
 
-    .partner-grid a {
-        display:flex;
-        justify-content:center;
-    }
+  .timeline-item {
+      width:100%;
+      padding-left:50px;
+      padding-right:10px;
+      margin-bottom:30px;
+  }
 
-    .partner-grid img {
-        max-width:180px;
-        margin:0 auto;
-    }
+  .timeline-item.left,
+  .timeline-item.right {
+      left:0;
+  }
 
-    /* sns (final version) */
-.sns-bar {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px !important;
-    justify-items: center;
+  .timeline-item::before {
+      left:8px !important;
+      right:auto;
+  }
 
-    width: fit-content;  
-    margin: 0 auto;      
-}
+  .timeline-content {
+      text-align:center;
+  }
 
-    .sns-bar img {
-        width:42px;
-        height:42px;
-    }
+  /* exchange */
+  .partner-grid {
+      grid-template-columns:1fr;
+      gap:20px;
+      justify-items:center;
+      text-align:center;
+  }
 
-    /* language flags */
-    .lang-bar img {
-        width:24px;
-        height:18px;
-    }
+  .partner-grid a {
+      display:flex;
+      justify-content:center;
+  }
+
+  .partner-grid img {
+      max-width:180px;
+      margin:0 auto;
+  }
+
+  /* sns */
+  .sns-bar {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px !important;
+      justify-items: center;
+      width: fit-content;  
+      margin: 0 auto;      
+  }
+
+  .sns-bar img {
+      width:42px;
+      height:42px;
+  }
+
+  /* language flags */
+  .lang-bar img {
+      width:24px;
+      height:18px;
+  }
 
 }
 </style>
@@ -930,7 +949,20 @@ TELTLK Strategic Collaboration
 
 const sections = document.querySelectorAll("section");
 
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
 function revealSections(){
+
+
+    if(isMobile()){
+        sections.forEach(sec => {
+            sec.classList.add("show");
+        });
+        return;
+    }
+
     const trigger = window.innerHeight * 0.85;
 
     sections.forEach(sec => {
@@ -945,7 +977,6 @@ function revealSections(){
 
 window.addEventListener("load", revealSections);
 window.addEventListener("scroll", revealSections);
-
 
 </script>
 </body>
