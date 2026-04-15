@@ -931,17 +931,14 @@ TELTLK Strategic Collaboration
 const sections = document.querySelectorAll("section");
 
 function revealSections(){
-    const triggerTop = window.innerHeight * 0.85;
-    const triggerBottom = window.innerHeight * 0.15;
+    const trigger = window.innerHeight * 0.85;
 
     sections.forEach(sec => {
         const rect = sec.getBoundingClientRect();
 
-        if(rect.top < triggerTop && rect.bottom > triggerBottom){
+        if(rect.top < trigger){
             sec.classList.add("hover-active");
-           sec.classList.add("show");  
-        } else {
-            sec.classList.remove("hover-active"); 
+            sec.classList.add("show");
         }
     });
 }
