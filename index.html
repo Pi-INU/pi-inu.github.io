@@ -383,24 +383,7 @@ footer {
     display:block;
     clear:both;
 }
-.lang-bar {
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    padding:8px;
-    background:#111;
-}
 
-.lang-bar img {
-    width:28px;
-    height:20px;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.lang-bar img:hover {
-    transform:scale(1.15);
-}
     .sns-bar {
     display:flex;
     justify-content:center;
@@ -645,35 +628,6 @@ footer {
 </head>
 
 <body>
-<!-- Language Bar -->
-<div class="lang-bar">
-
-<!-- English (original reset) -->
-<a href="#" onclick="location.href='https://pi-inu.github.io'; return false;">
-<img src="https://flagcdn.com/w40/us.png" alt="English">
-</a>
-
-<a href="#" onclick="goTranslate('ko'); return false;">
-<img src="https://flagcdn.com/w40/kr.png">
-</a>
-
-<a href="#" onclick="goTranslate('ja'); return false;">
-<img src="https://flagcdn.com/w40/jp.png">
-</a>
-
-<a href="#" onclick="goTranslate('zh-CN'); return false;">
-<img src="https://flagcdn.com/w40/cn.png">
-</a>
-
-<a href="#" onclick="goTranslate('vi'); return false;">
-<img src="https://flagcdn.com/w40/vn.png">
-</a>
-
-<a href="#" onclick="goTranslate('id'); return false;">
-<img src="https://flagcdn.com/w40/id.png">
-</a>
-
-</div>
 <!-- ===== TOP BAR ===== -->
 <div class="audit-bar">
 <a href="PINU_AuditReport_InterFi.pdf" target="_blank">PINU Audit</a> |
@@ -995,14 +949,7 @@ function revealSections(){
 
 window.addEventListener("load", revealSections);
 window.addEventListener("scroll", revealSections);
-/* Translation (fixed version) */
-function goTranslate(lang){
-    const originalUrl = "https://pi-inu.github.io/";
-    const url = encodeURIComponent(originalUrl);
 
-    window.location.href =
-    "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
-}
 
 </script>
 </body>
