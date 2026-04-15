@@ -982,6 +982,7 @@ function revealSections(){
 
         if(top < trigger){
             sec.classList.add("show");
+            sec.classList.add("hover-active");
         }
     });
 }
@@ -1001,18 +1002,7 @@ function goTranslate(lang){
     window.location.href =
     "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + url;
 }
-function revealSections(){
-    const trigger = window.innerHeight * 0.8;
 
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-
-        if(top < trigger){
-            sec.classList.add("show");
-            sec.classList.add("hover-active"); // 👉 이것만 추가
-        }
-    });
-}
 </script>
 </body>
 </html>
