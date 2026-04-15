@@ -81,11 +81,10 @@ body {
     position:absolute;
     inset:0;
 
-    background:
-        radial-gradient(circle at 20% 30%, rgba(255,204,102,0.25), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(123,31,162,0.25), transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(30,136,229,0.2), transparent 60%);
-
+       background:
+        radial-gradient(circle at 20% 30%, rgba(255,204,102,0.45), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(123,31,162,0.45), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(30,136,229,0.35), transparent 60%);
     z-index:0;
 }
 
@@ -237,7 +236,15 @@ section:not(.about-section):not(.history-section):hover {
     .token-box p {
     word-break: break-all;
 }
+.token-box:nth-child(1) {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    color:#fff;
+}
 
+.token-box:nth-child(2) {
+    background: linear-gradient(135deg, #1565c0, #42a5f5);
+    color:#fff;
+}
 .token-title {
     display:flex;
     align-items:center;
