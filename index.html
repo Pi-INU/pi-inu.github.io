@@ -515,9 +515,13 @@ footer {
 
 /* ===== MOBILE RESPONSIVE CLEAN ===== */
 @media (max-width: 768px) {
-   section.hover-active {
+  section.hover-active,
+.about-section.hover-active,
+.history-section.hover-active {
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
 }
     /* prevent horizontal scroll */
     html, body {
@@ -975,25 +979,22 @@ TELTLK Strategic Collaboration
 const sections = document.querySelectorAll("section");
 
 function revealSections(){
-    const trigger = window.innerHeight * 0.9;
+    const triggerTop = window.innerHeight * 0.85;
+    const triggerBottom = window.innerHeight * 0.15;
 
     sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
+        const rect = sec.getBoundingClientRect();
 
-        if(top < trigger){
-            sec.classList.add("show");
+        if(rect.top < triggerTop && rect.bottom > triggerBottom){
             sec.classList.add("hover-active");
+        } else {
+            sec.classList.remove("hover-active"); 
         }
     });
 }
 
-
 window.addEventListener("load", revealSections);
-
-
 window.addEventListener("scroll", revealSections);
-
-
 /* Translation (fixed version) */
 function goTranslate(lang){
     const originalUrl = "https://pi-inu.github.io/";
