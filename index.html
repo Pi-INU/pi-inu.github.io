@@ -48,63 +48,106 @@ body {
     margin:0;
     background:#f4f7f6;
 }
+/* ===== APPLE STYLE GLASS ===== */
 .about-section {
     position: relative;
     overflow: hidden;
 
+    /* 🔥 유리 베이스 */
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
 
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 16px;
+    color:#fff;
 
-    color: #fff;
+    /* 입체감 */
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
 
-
-    background-clip: padding-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* 🔥 배경 그라데이션 (깊이감 핵심) */
+.about-section::before {
+    content:"";
+    position:absolute;
+    inset:0;
 
-.about-section > * {
-    position: relative;
-    z-index: 2;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,204,102,0.25), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(123,31,162,0.25), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(30,136,229,0.2), transparent 60%);
+
+    z-index:0;
 }
-   .about-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 204, 102, 0.25),
-        rgba(123, 31, 162, 0.2),
-        rgba(30, 136, 229, 0.2)
-    );
-
-    z-index: 0;
-}
-   .about-section::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+/* 🔥 빛 흐름 */
+.about-section::after {
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
 
     background: linear-gradient(
         120deg,
         transparent 40%,
-        rgba(255,255,255,0.25) 50%,
+        rgba(255,255,255,0.35) 50%,
         transparent 60%
     );
 
-    transform: rotate(25deg);
-    animation: glassShine 6s linear infinite;
-    z-index: 1;
+    animation: glassFlow 8s linear infinite;
+    z-index:1;
 }
 
+@keyframes glassFlow {
+    0% { transform: translateX(-100%) rotate(25deg); }
+    100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* 콘텐츠 레이어 */
+.about-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 🔥 hover 시 살짝 뜨는 느낌 */
+.about-section:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+   .about-section {
+    opacity:0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.2,0.8,0.2,1);
+}
+
+.about-section.show {
+    opacity:1;
+    transform: translateY(0);
+}
+   .about-section h2 {
+    font-size:2.2rem;
+    margin-bottom:20px;
+
+    background: linear-gradient(90deg, #fff, #ffcc66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-section p {
+    color: rgba(255,255,255,0.85);
+    line-height:1.8;
+    font-weight:300;
+}
 @keyframes glassShine {
     0% { transform: translateX(-100%) rotate(25deg); }
     100% { transform: translateX(100%) rotate(25deg); }
