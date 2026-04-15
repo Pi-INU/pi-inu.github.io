@@ -514,12 +514,9 @@ footer {
   }
 
 
-  .sns-bar img,
-  .timeline-item::before,
-  .about-section::after {
-      animation: glassFlow 8s linear infinite;
-  }
-
+.about-section::after {
+    animation: glassFlow 8s linear infinite;
+}
   /* prevent horizontal scroll */
   html, body {
       overflow-x:hidden;
@@ -629,6 +626,7 @@ footer {
   .sns-bar img {
       width:42px;
       height:42px;
+     animation: float 3s ease-in-out infinite !important;
   }
 
   /* language flags */
