@@ -18,6 +18,16 @@
 background: linear-gradient(120deg, #000000, #1a1a1a, #ffcc66, #000000);
     background-size: 300% 300%;
     animation: flowMove 20s ease-in-out infinite;
+   border-radius:12px; 
+    box-shadow:0 6px 20px rgba(0,0,0,0.05); 
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+   .history-section:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.25);
 }
     @keyframes flowMove {
     0% {
