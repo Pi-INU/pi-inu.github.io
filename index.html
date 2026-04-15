@@ -50,10 +50,13 @@ body {
 }
 /* ===== APPLE STYLE GLASS ===== */
 .about-section {
+       max-width:1100px;
+    margin:40px auto;
+    padding:35px;
     position: relative;
     overflow: hidden;
 
-    /* 🔥 유리 베이스 */
+
     background: rgba(255,255,255,0.06);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -63,7 +66,7 @@ body {
 
     color:#fff;
 
-    /* 입체감 */
+
     box-shadow:
         0 20px 60px rgba(0,0,0,0.4),
         inset 0 1px 0 rgba(255,255,255,0.2);
@@ -71,7 +74,7 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* 🔥 배경 그라데이션 (깊이감 핵심) */
+
 .about-section::before {
     content:"";
     position:absolute;
@@ -85,7 +88,7 @@ body {
     z-index:0;
 }
 
-/* 🔥 빛 흐름 */
+
 .about-section::after {
     content:"";
     position:absolute;
@@ -110,13 +113,12 @@ body {
     100% { transform: translateX(100%) rotate(25deg); }
 }
 
-/* 콘텐츠 레이어 */
 .about-section > * {
     position: relative;
     z-index: 2;
 }
 
-/* 🔥 hover 시 살짝 뜨는 느낌 */
+
 .about-section:hover {
     transform: translateY(-8px) scale(1.01);
     box-shadow:
