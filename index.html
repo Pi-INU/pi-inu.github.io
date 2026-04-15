@@ -216,7 +216,16 @@ section:not(.about-section):not(.history-section) {
     border-radius:12px;
     box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
+section:not(.about-section):not(.history-section) {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
+section:not(.about-section):not(.history-section):hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
 /* ===== TOKEN ===== */
 .token-box {
     background:#ede7f6;
