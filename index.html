@@ -82,8 +82,6 @@ body {
 
 
 
-    opacity:0;
-    transform: translateY(40px);
 }
 
 .about-section::before {
@@ -140,12 +138,7 @@ body {
     transform: translateY(-8px) scale(1.01);
 }
 
-.about-section.show {
-    opacity:1;
-    transform: translateY(0);
 
-    transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
-}
    .about-section h2 {
     font-size:2.2rem;
     margin-bottom:20px;
@@ -524,7 +517,7 @@ footer {
   .sns-bar img,
   .timeline-item::before,
   .about-section::after {
-      animation: none !important;
+      animation: glassFlow 8s linear infinite;
   }
 
   /* prevent horizontal scroll */
