@@ -703,7 +703,11 @@ Audited | CMC Listed | Multi-Exchange Listed
 <a href="https://www.teltlk.com/" target="_blank">
 <img src="Teltlk.png" >
 </a>
-
+  
+<a href="#" onclick="openBanner(); return false;">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/question.svg">
+</a>
+  
 </div>
 </header>
 <section class="about-section">
@@ -949,6 +953,9 @@ TELTLK Strategic Collaboration
 <a href="https://www.teltlk.com/" target="_blank">
 <img src="Teltlk.png" >
 </a>
+          <a href="#" onclick="openBanner(); return false;">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/question.svg">
+</a>
 
 </div><p>
 <p>© 2026 Pi INU Project</p>
@@ -987,7 +994,15 @@ function revealSections(){
 
 window.addEventListener("load", revealSections);
 window.addEventListener("scroll", revealSections);
-
+<script>
+function openBanner() {
+    window.open(
+        "banner.html",
+        "bannerWindow",
+        "width=420,height=520,resizable=no,scrollbars=no"
+    );
+}
+</script>
 </script>
 </body>
 </html>
