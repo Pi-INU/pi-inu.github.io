@@ -90,11 +90,21 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     background-image: url('PINU100X.png');
     background-size: 50px 50px;
     background-repeat: repeat;
-    opacity: 0.05;   /* 🔥 여기서 투명도 조절 (0.03~0.08 추천) */
+
+    opacity: 0.05;
     z-index: -1;
+
+    animation: bgMove 60s linear infinite;
+}
+
+/* 🔥 부드러운 이동 */
+@keyframes bgMove {
+    0%   { background-position: 0 0; }
+    100% { background-position: 500px 500px; }
 }
 /* ===== APPLE STYLE GLASS ===== */
 .about-section {
@@ -444,6 +454,23 @@ footer {
         grid-template-columns: repeat(4, 60px);
         gap: 18px;
     }
+   section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image: url('PINU100X.png');
+      background-size: 40px 40px;
+      background-repeat: repeat;
+
+      opacity: 0.04;
+      z-index: 0;
+  }
+
+  section > * {
+      position: relative;
+      z-index: 1;
+  }
 }
 @keyframes float {
     0%   { transform: translateY(0px); }
