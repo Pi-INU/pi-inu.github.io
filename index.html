@@ -443,29 +443,13 @@ footer {
 }
 
 
-/* 모바일 */
+/* mobile */
 @media (max-width: 768px) {
     .sns-bar {
         grid-template-columns: repeat(4, 60px);
         gap: 18px;
     }
-   section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background-image: url('PINU100X.png');
-      background-size: 40px 40px;
-      background-repeat: repeat;
-
-      opacity: 0.04;
-      z-index: 0;
-  }
-
-  section > * {
-      position: relative;
-      z-index: 1;
-  }
+   
 }
 @keyframes float {
     0%   { transform: translateY(0px); }
