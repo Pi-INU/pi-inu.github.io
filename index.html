@@ -75,7 +75,26 @@ section:first-of-type {
 body {
     font-family: 'Segoe UI', sans-serif;
     margin:0;
-    background:#f4f7f6;
+
+    background-color: #f4f7f6;
+
+    background-image: url('PINU100X.png');
+    background-size: 50px 50px;   /* 아이콘 크기 */
+    background-repeat: repeat;    /* 바둑판 */
+    
+    opacity: 1;
+}
+
+/* 🔥 배경만 흐리게 만들기 위해 body에 overlay 추가 */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('PINU100X.png');
+    background-size: 50px 50px;
+    background-repeat: repeat;
+    opacity: 0.05;   /* 🔥 여기서 투명도 조절 (0.03~0.08 추천) */
+    z-index: -1;
 }
 /* ===== APPLE STYLE GLASS ===== */
 .about-section {
