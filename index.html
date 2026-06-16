@@ -667,7 +667,41 @@ footer {
       margin:0 auto;
   }
 
- 
+ .pinu100x-section {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(120deg, #ffffff, #f8f9fb, #ffffff);
+    background-size: 200% 200%;
+    animation: softFlow 10s ease infinite;
+
+    border-radius: 16px;
+}
+
+/* 은은한 빛 효과 */
+.pinu100x-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 200, 120, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(120, 180, 255, 0.15), transparent 40%);
+
+    z-index: 0;
+}
+
+.pinu100x-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 부드러운 흐름 */
+@keyframes softFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
   /* language flags */
   .lang-bar img {
@@ -773,7 +807,7 @@ Audited | CMC Listed | Multi-Exchange Listed
   
 </div>
 </header>
-  <section>
+<section class="pinu100x-section">
 <h2>About PINU100X Token</h2>
 
 <p><b>'Pi' n 'U' make 100X Token! - PINU100X</b><br>
