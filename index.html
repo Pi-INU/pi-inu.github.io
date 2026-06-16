@@ -82,7 +82,7 @@ body {
 
 }
 
-/* 🔥 배경만 흐리게 만들기 위해 body에 overlay 추가 */
+
 body::before {
     content: "";
     position: fixed;
@@ -98,7 +98,7 @@ body::before {
     animation: bgMove 60s linear infinite;
 }
 
-/* 🔥 부드러운 이동 */
+
 @keyframes bgMove {
     0%   { background-position: 0 0; }
     100% { background-position: 500px 500px; }
@@ -133,9 +133,9 @@ body::before {
     inset:0;
 
        background:
-        radial-gradient(circle at 20% 30%, rgba(255,204,102,0.45), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(123,31,162,0.45), transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(30,136,229,0.35), transparent 60%);
+        radial-gradient(circle at 20% 30%, rgba(255,140,0,0.45), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,180,60,0.45), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255,120,0,0.35), transparent 60%);
     z-index:0;
 }
 
@@ -183,7 +183,7 @@ body::before {
 
 
    .about-section h2 {
-    font-size:2.2rem;
+    font-size:1.8rem;
     margin-bottom:20px;
           color: #111;           
 
@@ -263,7 +263,7 @@ header h1 { font-size:3rem; margin:0; }
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* 🔥 강한 빛 흐름 */
+
 .pinu100x-section::before {
     content: "";
     position: absolute;
@@ -281,7 +281,7 @@ header h1 { font-size:3rem; margin:0; }
     z-index: 1;
 }
 
-/* 🔥 컬러 글로우 */
+
 .pinu100x-section::after {
     content: "";
     position: absolute;
